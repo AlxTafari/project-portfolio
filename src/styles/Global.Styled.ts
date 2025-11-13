@@ -17,11 +17,15 @@ export const GlobalStyled = createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: ${Theme.colors.Font};
+        color: ${Theme.DarkColors.Font};
     }
-
+    
+    // ul {
+    //     color: ${Theme.DarkColors.Font};
+    // }
+    
     p {
-        color: ${Theme.colors.SecondryFont};
+        color: ${Theme.DarkColors.SecondryFont};
     }
     
     a {
@@ -37,8 +41,8 @@ export const GlobalStyled = createGlobalStyle`
         border: none;
     }
     
-    section {
-        background: ${Theme.colors.PrimaryBg};
+    section, header, footer {
+        background: ${Theme.DarkColors.PrimaryBg};
     }
     
 `

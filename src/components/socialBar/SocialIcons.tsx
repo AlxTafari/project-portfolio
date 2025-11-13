@@ -1,18 +1,19 @@
 import styled from "styled-components";
 import {Icon} from "../icon/Icon.tsx";
+import {StyledLink} from "../StyledButton.tsx";
 
 export const SocialIcons = () => {
     return (
         <StyledSocialBar>
-            <a href="">
+            <StyledLink href="">
                 <Icon iconId={"telegram"} width={"40"} height={"40"} viewBox={"0 0 29 29"} />
-            </a>
-            <a href="">
+            </StyledLink>
+            <StyledLink href="">
                 <Icon iconId={"linkedin"} width={"40"} height={"40"} viewBox={"0 0 40 40"} />
-            </a>
-            <a href="">
+            </StyledLink>
+            <StyledLink href="">
                 <Icon iconId={"git"} width={"40"} height={"40"} viewBox={"0 0 40 40"}/>
-            </a>
+            </StyledLink>
         </StyledSocialBar>
     );
 };

@@ -1,54 +1,53 @@
 import styled from "styled-components";
 import photo from "../../../assets/img/prj6.webp"
+import {Container} from "../../../components/container/Container.ts";
+import {Theme} from "../../../styles/Theme.ts";
+import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 
 export const Main = () => {
     return (
         <StyledMain>
-            <FlexWrapper justify={"space-around"} alignItems={"center"} direction={"row"}>
-                <StyledHello>Hi 👋,
-                    My name is <br/>
-                    Alexander<br/>
-                    I build things for web</StyledHello>
-                <Photo src={photo}/>
-            </FlexWrapper>
+            <Container>
+                <FlexWrapper justify={"space-between"} align={"center"}>
+                    <StyledHello>
+                        <span>Hi 👋,</span>
+                        <span>My name is</span>
+                        <GradientText>Alexander</GradientText>
+                        <span>I build things for web</span>
+                    </StyledHello>
+                    <Photo src={photo}/>
+
+                </FlexWrapper>
+            </Container>
         </StyledMain>
-    );
-};
+    )
+}
 
 const StyledMain = styled.section`
     min-height: 100vh;
-    background-color: bisque;
-
-`
-
-type FlexWrapperPropsType = {
-    direction?: string;
-    justify?: string;
-    alignItems?: string;
-    wrap?: string;
-}
-
-const FlexWrapper = styled.div<FlexWrapperPropsType>`
     display: flex;
-    min-height: 800px;
-    flex-direction: ${props => props.direction};
-    justify-content: ${props => props.justify};
-    align-items: ${props => props.alignItems};
-    wrap: ${props => props.wrap};
+
 `
 
 const StyledHello = styled.h1`
-
+    display: flex;
+    align-items: start;
+    flex-direction: column;
 `
 
 const Photo = styled.img`
-    width: 349px;
-    height: 349px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     object-fit: cover;
-    padding: 9px;
+    padding: 8px;
     background: linear-gradient(to right, #E70FAA, #00C0FD);
     box-sizing: border-box;
-    
-`
 
+`
+const GradientText = styled.span`
+    background: ${Theme.DarkColors.Gradient};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+`;

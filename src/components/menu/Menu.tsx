@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {StyledBtn, StyledLink} from "../StyledButton.tsx";
 
 
 export const Menu = () => {
@@ -6,19 +7,19 @@ export const Menu = () => {
         <StyledMenu>
             <ul>
                 <li>
-                    <a href="">Home</a>
+                    <StyledBtn as={StyledLink} href="#">Home</StyledBtn>
                 </li>
                 <li>
-                    <a href="">About</a>
+                    <StyledBtn as={StyledLink} href="">About</StyledBtn>
                 </li>
                 <li>
-                    <a href="">Tech Stack</a>
+                    <StyledBtn as={StyledLink} href="">Tech Stack </StyledBtn>
                 </li>
                 <li>
-                    <a href="">Projects</a>
+                    <StyledBtn as={StyledLink} href="">Projects</StyledBtn>
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    <StyledBtn as={StyledLink} href="">Contact</StyledBtn>
                 </li>
             </ul>
             </StyledMenu>
@@ -26,6 +27,10 @@ export const Menu = () => {
 };
 
 const StyledMenu = styled.nav`
+    
+    a {
+        text-decoration: none;
+    }
     ul {
         display: flex;
         gap: 64px;

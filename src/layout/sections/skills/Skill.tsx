@@ -18,7 +18,7 @@ export const Skill = (props: SkillPropsType) => {
 
 const StyledSkill = styled.div`
     margin-bottom: 3rem;
-    width: 16%;
+    width: 100%;
 `
 const StyledImg = styled.img`
     width: auto; /* естественная ширина */

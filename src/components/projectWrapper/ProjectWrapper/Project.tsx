@@ -4,6 +4,8 @@ import {ProjectPreview} from "../../../assets/img/skills/ImportImages.tsx";
 import {InformationBlock} from "../../informationBlock/InformationBlock.tsx";
 import {Icon} from "../../icon/Icon.tsx";
 import {StyledBtn, StyledLink} from "../../StyledButton.tsx";
+import {Theme} from "../../../styles/Theme.ts";
+import {FlexWrapper} from "../../FlexWrapper.tsx";
 
 type ProjectPropsType = {
     proj: keyof typeof ProjectPreview;
@@ -14,41 +16,44 @@ export const Project = (props: ProjectPropsType) => {
 
         <StyledProjectWrapper>
             <StyledImg src={ProjectPreview[props.proj]} alt={props.proj}/>
-
-            <InformationBlock
-                title={"Project Tile goes here"}
-                textAlign="left"
-                description="This is sample project description random things are here in description This is
+            <FlexWrapper justify={"space-around"} direction={"column"} >
+                <InformationBlock
+                    title={"Project Tile goes here"}
+                    textAlign="left"
+                    description="This is sample project description random things are here in description This is
                         sample project lorem ipsum generator for dummy content"
-            />
+                />
 
-            <StyledBox>
-                <StyledBtn as={StyledLink} href={"#"}>
-                    <Icon iconId={"code"} width={"20"} height={"20"}/>
-                    Live Preview
-                </StyledBtn>
+                <StyledBox>
+                    <StyledBtn as={StyledLink} href={"#"}>
+                        <Icon iconId={"code"} width={"20"} height={"20"}/>
+                        Live Preview
+                    </StyledBtn>
 
-                <StyledBtn as={StyledLink} href={"#"}>
-                    <Icon iconId={"code"} width={"20"} height={"20"}/>
-                    View Code
-                </StyledBtn>
-            </StyledBox>
+                    <StyledBtn as={StyledLink} href={"#"}>
+                        <Icon iconId={"code"} width={"20"} height={"20"}/>
+                        View Code
+                    </StyledBtn>
+                </StyledBox>
+
+            </FlexWrapper>
         </StyledProjectWrapper>
     );
 };
 
 
 const StyledProjectWrapper = styled.div`
-    width: 32%;
-    min-height: 520px;
+    width: 100%;
+    min-height: 540px;
     border-radius: 20px;
-    background-color: #ffffff;
-    box-shadow: 2px 2px 100px 0px rgba(87, 244, 13, 0.97);;
+    background-color: ${Theme.DarkColors.SecondaryBg};
+    box-shadow: ${Theme.DarkColors.Shadow};
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     font-family: 'Inter', sans-serif;
+    padding: 0 0 2rem 0;
 `
 const StyledImg = styled.img`
     width: 100%;
@@ -64,4 +69,8 @@ const StyledBox = styled.div`
     margin-left: 20px;
     float: left;
     gap: 48px;
+    
+    a {
+        text-decoration: underline;
+    }
 `

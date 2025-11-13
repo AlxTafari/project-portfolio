@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo.tsx";
 import {Menu} from "../../components/menu/Menu.tsx";
 import {SocialIcons} from "../../components/socialBar/SocialIcons.tsx";
-import {Container} from "../../components/Container.ts";
+import {Container} from "../../components/container/Container.ts";
 import {FlexWrapper} from "../../components/FlexWrapper.tsx";
 
 export const Header = () => {
@@ -25,8 +25,7 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    min-height: 59px;
-    background-color: #57d976;
+    min-height: 60px;
     display: flex;
 
 `
