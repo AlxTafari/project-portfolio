@@ -5,6 +5,8 @@ import {SocialIcons} from "../../components/socialBar/SocialIcons.tsx";
 import {Container} from "../../components/container/Container.ts";
 import {FlexWrapper} from "../../components/FlexWrapper.tsx";
 
+export const items = ["Home", "About", "Tech Stack", "Projects", "Contact"]
+
 export const Header = () => {
     return (
         <StyledHeader>
@@ -12,7 +14,7 @@ export const Header = () => {
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo/>
                     <FlexWrapper justify="flex-end" align={"center"}>
-                        <Menu/>
+                        <Menu menuItem={items}/>
                         <SocialIcons/>
                     </FlexWrapper>
 
@@ -25,9 +27,14 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    min-height: 60px;
+    background: rgba(32, 32, 33, 0.5);
+    padding: 20px 0;
     display: flex;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
 `
 
 

@@ -21,7 +21,6 @@ export const SocialIcons = () => {
 const StyledSocialBar = styled.nav`
     display: flex;
     align-items: center;
-    margin-left: 40px;
     gap: 10px;
     
 `

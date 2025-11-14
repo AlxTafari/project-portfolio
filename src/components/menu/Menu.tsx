@@ -1,36 +1,28 @@
 import styled from "styled-components";
-import {StyledBtn, StyledLink} from "../StyledButton.tsx";
+import { StyledLink} from "../StyledButton.tsx";
 
 
-export const Menu = () => {
+export const Menu = (props: { menuItem: Array<string> }) => {
     return (
         <StyledMenu>
             <ul>
-                <li>
-                    <StyledBtn as={StyledLink} href="#">Home</StyledBtn>
-                </li>
-                <li>
-                    <StyledBtn as={StyledLink} href="">About</StyledBtn>
-                </li>
-                <li>
-                    <StyledBtn as={StyledLink} href="">Tech Stack </StyledBtn>
-                </li>
-                <li>
-                    <StyledBtn as={StyledLink} href="">Projects</StyledBtn>
-                </li>
-                <li>
-                    <StyledBtn as={StyledLink} href="">Contact</StyledBtn>
-                </li>
+                {props.menuItem.map((item, index) => {
+                        return  <li key={index}>
+                            <StyledLink as={StyledLink} href="#">{item}</StyledLink>
+                                </li>
+                    }
+                )}
             </ul>
-            </StyledMenu>
+        </StyledMenu>
     );
 };
 
 const StyledMenu = styled.nav`
-    
+
     a {
         text-decoration: none;
     }
+
     ul {
         display: flex;
         gap: 64px;

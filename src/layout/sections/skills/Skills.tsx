@@ -9,7 +9,7 @@ export const Skills = () => {
     return (
         <StyledSkills>
             <Container>
-                <FlexWrapper align={"center"}  justify={""}>
+                <FlexWrapper align={"center"} justify={"center"}>
                     <InformationBlock
                         textAlign={"center"} marginBottom={"4rem"}
                         title={"My Tech Stack"}

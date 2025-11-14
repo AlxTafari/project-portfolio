@@ -5,6 +5,7 @@ import {SocialIcons} from "../../components/socialBar/SocialIcons.tsx";
 import {Menu} from "../../components/menu/Menu.tsx";
 import {Container} from "../../components/container/Container.ts";
 import {StyledLink} from "../../components/StyledButton.tsx";
+import {items} from "../header/Header.tsx";
 
 export const Footter = () => {
     return (
@@ -24,7 +25,7 @@ export const Footter = () => {
 
 
                 <FlexWrapper justify="space-between">
-                    <Menu/>
+                    <Menu menuItem={items}/>
                     <Copyright>Designed and built by AlxTafari</Copyright>
                 </FlexWrapper>
             </Container>
