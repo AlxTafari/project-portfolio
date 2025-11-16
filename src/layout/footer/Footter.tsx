@@ -4,7 +4,7 @@ import {Logo} from "../../components/logo/Logo.tsx";
 import {SocialIcons} from "../../components/socialBar/SocialIcons.tsx";
 import {Menu} from "../../components/menu/Menu.tsx";
 import {Container} from "../../components/container/Container.ts";
-import {StyledLink} from "../../components/StyledButton.tsx";
+import {StyledLink} from "../../components/StyledLink.tsx";
 import {items} from "../header/Header.tsx";
 
 export const Footter = () => {

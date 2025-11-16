@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {ProjectPreview} from "../../../assets/img/skills/ImportImages.tsx";
 import {InformationBlock} from "../../informationBlock/InformationBlock.tsx";
 import {Icon} from "../../icon/Icon.tsx";
-import {StyledBtn, StyledLink} from "../../StyledButton.tsx";
+import {StyledLink} from "../../StyledLink.tsx";
 import {Theme} from "../../../styles/Theme.ts";
 import {FlexWrapper} from "../../flexWrapper/FlexWrapper.tsx";
 
@@ -16,7 +16,7 @@ export const Project = (props: ProjectPropsType) => {
 
         <StyledProjectWrapper>
             <StyledImg src={ProjectPreview[props.proj]} alt={props.proj}/>
-            <FlexWrapper justify={"space-around"} direction={"column"} >
+            <FlexWrapper justify={"space-around"} direction={"column"}>
                 <InformationBlock
                     title={"Project Tile goes here"}
                     textAlign="left"
@@ -24,25 +24,24 @@ export const Project = (props: ProjectPropsType) => {
                         sample project lorem ipsum generator for dummy content"
                 />
 
-                <StyledBox>
-                    <StyledBtn as={StyledLink} href={"#"}>
+                <StyledLinkBox>
+                    <StyledLink href={"#"}>
                         <Icon iconId={"code"} width={"20"} height={"20"}/>
                         Live Preview
-                    </StyledBtn>
+                    </StyledLink>
 
-                    <StyledBtn as={StyledLink} href={"#"}>
+                    <StyledLink href={"#"}>
                         <Icon iconId={"code"} width={"20"} height={"20"}/>
                         View Code
-                    </StyledBtn>
-                </StyledBox>
-
+                    </StyledLink>
+                </StyledLinkBox>
             </FlexWrapper>
         </StyledProjectWrapper>
     );
 };
 
 
-const StyledProjectWrapper = styled.div`
+export const StyledProjectWrapper = styled.div`
     width: 100%;
     min-height: 540px;
     border-radius: 20px;
@@ -58,10 +57,11 @@ const StyledProjectWrapper = styled.div`
     h2 {
         font-size: 26px;
     }
+
     p {
         font-size: 18px;
 `
-const StyledImg = styled.img`
+export const StyledImg = styled.img`
     width: 100%;
     max-height: 265px;
     height: 100%;
@@ -69,13 +69,13 @@ const StyledImg = styled.img`
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 `
-const StyledBox = styled.div`
+export const StyledLinkBox = styled.div`
     display: flex;
     flex-direction: row;
     margin-left: 20px;
     float: left;
     gap: 48px;
-    
+
     a {
         text-decoration: underline;
     }

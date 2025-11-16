@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {InformationBlock} from "../../../components/informationBlock/InformationBlock.tsx";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
-import {StyledBtn, StyledLink} from "../../../components/StyledButton.tsx";
+import {StyledLink} from "../../../components/StyledLink.tsx";
 import {Container} from "../../../components/container/Container.ts";
 
 export const Contacts = () => {
@@ -17,7 +17,7 @@ export const Contacts = () => {
                     <Field itemID="text" placeholder={"your message"} type="textarea"/>
                 </StyledForm>
 
-                <StyledBtn as={StyledLink}>Send Message</StyledBtn>
+                <StyledLink>Send Message</StyledLink>
 
             </Container>
         </StyledContacts>

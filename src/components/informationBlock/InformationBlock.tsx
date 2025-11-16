@@ -20,7 +20,6 @@ export const InformationBlock = (props: InformationBlockPropsType) => {
             {props.children}
             <p>{props.description}</p>
 
-
         </StyledInformationBlock>
     );
 };

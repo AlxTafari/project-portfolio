@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {Icon} from "../icon/Icon.tsx";
-import {StyledLink} from "../StyledButton.tsx";
+import {StyledLink} from "../StyledLink.tsx";
 
 export const SocialIcons = () => {
     return (

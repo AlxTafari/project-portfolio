@@ -1,6 +1,6 @@
 import { Icon } from "../icon/Icon.tsx";
 import styled from "styled-components";
-import {StyledLink} from "../StyledButton.tsx";
+import {StyledLink} from "../StyledLink.tsx";
 import {Theme} from "../../styles/Theme.ts";
 
 

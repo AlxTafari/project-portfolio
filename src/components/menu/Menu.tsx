@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledLink} from "../StyledButton.tsx";
+import { StyledLink} from "../StyledLink.tsx";
 
 
 export const Menu = (props: { menuItem: Array<string> }) => {
@@ -8,7 +8,7 @@ export const Menu = (props: { menuItem: Array<string> }) => {
             <ul>
                 {props.menuItem.map((item, index) => {
                         return  <li key={index}>
-                            <StyledLink as={StyledLink} href="#">{item}</StyledLink>
+                            <StyledLink href="#">{item}</StyledLink>
                                 </li>
                     }
                 )}

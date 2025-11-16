@@ -22,6 +22,5 @@ export const Photo = {bootstrap, git, cib_greensock, github,
     html, react, sass, smthtech1, tailwind, typecss, vscode, js
 };
 
-export const ProjectPreview = {
-    proj1, proj2, proj3, proj4, proj5, proj6,
+export const ProjectPreview = {proj1, proj2, proj3, proj4, proj5, proj6,
 }
