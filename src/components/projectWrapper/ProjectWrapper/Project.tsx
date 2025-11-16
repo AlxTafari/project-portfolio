@@ -5,7 +5,7 @@ import {InformationBlock} from "../../informationBlock/InformationBlock.tsx";
 import {Icon} from "../../icon/Icon.tsx";
 import {StyledBtn, StyledLink} from "../../StyledButton.tsx";
 import {Theme} from "../../../styles/Theme.ts";
-import {FlexWrapper} from "../../FlexWrapper.tsx";
+import {FlexWrapper} from "../../flexWrapper/FlexWrapper.tsx";
 
 type ProjectPropsType = {
     proj: keyof typeof ProjectPreview;
@@ -54,6 +54,12 @@ const StyledProjectWrapper = styled.div`
     align-items: flex-start;
     font-family: 'Inter', sans-serif;
     padding: 0 0 2rem 0;
+
+    h2 {
+        font-size: 26px;
+    }
+    p {
+        font-size: 18px;
 `
 const StyledImg = styled.img`
     width: 100%;

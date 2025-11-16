@@ -27,9 +27,13 @@ export const InformationBlock = (props: InformationBlockPropsType) => {
 
 const StyledInformationBlock = styled.div<InformationBlockPropsType>`
     h2 {
-        margin-bottom: 20px;
+        font-size: 48px;
+        margin-bottom: 38px;
     }
-    padding: 10px;
+    p {
+        font-size: 26px;
+    }
+    
     text-align: ${props => props.textAlign || "left"};
     margin-bottom: ${props => props.marginBottom || "0px"};
 `

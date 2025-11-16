@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import photo from "../../../assets/img/prj6.webp"
 import {Container} from "../../../components/container/Container.ts";
-import {Theme} from "../../../styles/Theme.ts";
-import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
-
+import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
+import {GradientText} from "../../../components/gradientText/GradientText.tsx";
+import {Framed} from "../../../components/framed/Framed.tsx";
 export const Main = () => {
     return (
         <StyledMain>
@@ -13,10 +13,11 @@ export const Main = () => {
                         <span>Hi 👋,</span>
                         <span>My name is</span>
                         <GradientText>Alexander</GradientText>
-                        <span>I build things for web</span>
+                        <span>I am Web Developer</span>
                     </StyledHello>
-                    <Photo src={photo}/>
-
+                    <Framed>
+                        <Photo src={photo}/>
+                    </Framed>
                 </FlexWrapper>
             </Container>
         </StyledMain>
@@ -26,6 +27,7 @@ export const Main = () => {
 const StyledMain = styled.section`
     min-height: 100vh;
     display: flex;
+    overflow: hidden;
 
 `
 
@@ -33,6 +35,9 @@ const StyledHello = styled.h1`
     display: flex;
     align-items: start;
     flex-direction: column;
+    line-height: 70px;
+    letter-spacing: -1px;
+    font-size: 58px;
 `
 
 const Photo = styled.img`
@@ -45,9 +50,18 @@ const Photo = styled.img`
     box-sizing: border-box;
 
 `
-const GradientText = styled.span`
-    background: ${Theme.DarkColors.Gradient};
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-`;
+//
+// const PhotoWrapper = styled.div`
+//
+//     position: relative;
+//     z-index: 0;
+//
+//     &::before {
+//         content: '';
+//         position: absolute;
+//         height: 444px;
+//         width: 444px;
+//         border: 1px solid red;
+//         z-index: -1;
+//         transform: rotate(30deg);
+//     }`

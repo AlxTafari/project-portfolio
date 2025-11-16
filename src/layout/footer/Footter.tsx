@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {FlexWrapper} from "../../components/FlexWrapper.tsx";
+import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
 import {Logo} from "../../components/logo/Logo.tsx";
 import {SocialIcons} from "../../components/socialBar/SocialIcons.tsx";
 import {Menu} from "../../components/menu/Menu.tsx";

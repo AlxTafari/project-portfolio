@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {InformationBlock} from "../../../components/informationBlock/InformationBlock.tsx";
 import {Skill} from "./Skill.tsx";
-import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
+import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {Container} from "../../../components/container/Container.ts";
 import {GridWrapper} from "../../../components/gridWrapper/GridWrapper.tsx";
 

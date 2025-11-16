@@ -18,6 +18,7 @@ export const GlobalStyled = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         color: ${Theme.DarkColors.Font};
+        line-height: 1.2;
     }
     
     // ul {

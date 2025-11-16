@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {InformationBlock} from "../../../components/informationBlock/InformationBlock.tsx";
-import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
+import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {StyledBtn, StyledLink} from "../../../components/StyledButton.tsx";
 import {Container} from "../../../components/container/Container.ts";
 

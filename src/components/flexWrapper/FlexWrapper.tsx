@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
+
 type FlexWrapperPropsType = {
     direction?: string;
     justify?: string;
-    alignItems?: string;
+    align?: string;
+    alignContent?: string;
     wrap?: string;
-}
-export const FlexWrapper1 = styled.div<FlexWrapperPropsType>`
+};
+
+export const FlexWrapper = styled.div<FlexWrapperPropsType>`
     display: flex;
-    flex-direction: ${props => props.direction};
-    justify-content: ${props => props.justify};
-    align-items: ${props => props.alignItems};
-    flex-wrap: ${props => props.wrap};
+    height: 100%;
+    flex-direction: ${props => props.direction || "row"};
+    justify-content: ${props => props.justify || "center"};
+    align-items: ${props => props.align || "stretch"};
+    align-content: ${props => props.alignContent || "center"};
+    flex-wrap: ${props => props.wrap || "wrap"};
+    
 `
+
