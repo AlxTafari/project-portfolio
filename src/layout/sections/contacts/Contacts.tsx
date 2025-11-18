@@ -16,9 +16,13 @@ export const Contacts = () => {
                     <Field placeholder={"name"}/>
                     <Field placeholder={"subject"}/>
                     <Field as={"textarea"} placeholder={"your message"} />
+                    <StyledButton type={"submit"}>
+                        Send Message
+                    </StyledButton>
                 </StyledForm>
 
-                <StyledLink>Send Message</StyledLink>
+
+
 
             </Container>
         </StyledContacts>
@@ -70,7 +74,42 @@ const Field = styled.input`
     &:focus-visible {
         outline: 2px solid ${theme.darkColors.borderColor};
     }
+`
+const StyledButton = styled.button`
+    width: auto;
+    height: auto;
+    font-weight: 300;
+    font-size: 16px;
+    padding: 6px;
+    background-color: ${theme.darkColors.secondaryBg};
+    color: ${theme.darkColors.secondaryFont};
+    border: 1px solid ${theme.darkColors.borderColor};
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    transition: color 0.5s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -4px;
+        height: 0;
+        border: 2px solid transparent;
+        transition: height 0.5s ease, border-color 0.5s ease;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: ${theme.darkColors.accent};
+
+        &::before {
+            height: 100%;
+            border-color: ${theme.darkColors.accent};
+        }
+    }
+
+    &:focus-visible {
+        outline: 2px solid ${theme.darkColors.borderColor};}
     
-
-
 `

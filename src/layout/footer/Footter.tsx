@@ -6,6 +6,8 @@ import {Menu} from "../../components/menu/Menu.tsx";
 import {Container} from "../../components/container/Container.ts";
 import {StyledLink} from "../../components/styledLink/StyledLink.tsx";
 import {items} from "../header/Header.tsx";
+import {GradientText} from "../../components/gradientText/GradientText.tsx";
+import {theme} from "../../styles/Theme.ts";
 
 export const Footter = () => {
     return (
@@ -16,18 +18,23 @@ export const Footter = () => {
                     <Logo/>
 
                     <FlexWrapper>
+
                         <StyledNum>
                             <StyledLink>+91 12345 09876</StyledLink>
                             <StyledLink>info@example.com</StyledLink>
                         </StyledNum>
+
                         <SocialIcons/>
+
                     </FlexWrapper>
                 </FlexWrapper>
+                <Divider/>
 
 
                 <FlexWrapper justify="space-between">
                     <Menu menuItem={items}/>
-                    <Copyright>Designed and built by AlxTafari</Copyright>
+                    <Copyright>Designed and built by <GradientText>AlxTafari</GradientText></Copyright>
+
                 </FlexWrapper>
             </Container>
         </StyledFooter>
@@ -35,14 +42,20 @@ export const Footter = () => {
 };
 
 const StyledFooter = styled.footer`
-    height: 20vh;
+    padding: 60px 0;
 `
 
 const Copyright = styled.small`
+    opacity: 0.8;
 `
 
 const StyledNum = styled.div`
     display: flex;
     flex-direction: row;
     gap: 60px;
+`
+
+const Divider = styled.div`
+    border: 2px solid ${theme.darkColors.borderColor};
+    margin: 40px 0;
 `
