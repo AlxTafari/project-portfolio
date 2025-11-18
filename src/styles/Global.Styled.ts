@@ -1,5 +1,5 @@
 import {createGlobalStyle} from "styled-components";
-import {Theme} from "./Theme.ts";
+import {theme} from "./Theme.ts";
 
 export const GlobalStyled = createGlobalStyle`
     *,
@@ -17,16 +17,16 @@ export const GlobalStyled = createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: ${Theme.DarkColors.Font};
+        color: ${theme.darkColors.font};
         line-height: 1.2;
     }
     
-    // ul {
-    //     color: ${Theme.DarkColors.Font};
-    // }
+    section {
+        padding: 0 0 100px 0;
+    }
     
     p {
-        color: ${Theme.DarkColors.SecondryFont};
+        color: ${theme.darkColors.secondaryFont};
     }
     
     a {
@@ -43,7 +43,7 @@ export const GlobalStyled = createGlobalStyle`
     }
     
     section, header, footer {
-        background: ${Theme.DarkColors.PrimaryBg};
+        background: ${theme.darkColors.primaryBg};
     }
     
 `

@@ -1,7 +1,7 @@
 import { Icon } from "../icon/Icon.tsx";
 import styled from "styled-components";
-import {StyledLink} from "../StyledLink.tsx";
-import {Theme} from "../../styles/Theme.ts";
+import {StyledLink} from "../styledLink/StyledLink.tsx";
+import {theme} from "../../styles/Theme.ts";
 
 
 export const Logo = () => {

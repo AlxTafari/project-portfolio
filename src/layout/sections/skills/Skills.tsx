@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {InformationBlock} from "../../../components/informationBlock/InformationBlock.tsx";
+import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {Skill} from "./Skill.tsx";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {Container} from "../../../components/container/Container.ts";
@@ -10,8 +10,8 @@ export const Skills = () => {
         <StyledSkills>
             <Container>
                 <FlexWrapper align={"center"} justify={"center"}>
-                    <InformationBlock
-                        textAlign={"center"} marginBottom={"4rem"}
+                    <SectionTitle
+                        align={"center"} marginBottom={"4rem"}
                         title={"My Tech Stack"}
                         description={"Technologies I’ve been working with recently"}
                     />
@@ -37,7 +37,6 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
-    height: 100vh;
     display: flex;
 
 `

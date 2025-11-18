@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {Icon} from "../icon/Icon.tsx";
-import {StyledLink} from "../StyledLink.tsx";
+import {StyledLink} from "../styledLink/StyledLink.tsx";
 
 export const SocialIcons = () => {
     return (
@@ -22,6 +22,6 @@ const StyledSocialBar = styled.nav`
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-left: 2rem;
+    margin-left: 50px;
     
 `

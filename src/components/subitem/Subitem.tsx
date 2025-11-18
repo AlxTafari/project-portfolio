@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {Icon} from "../icon/Icon.tsx";
-import {Theme} from "../../styles/Theme.ts";
+import {theme} from "../../styles/Theme.ts";
 
 type SubitemPropsType = {
     subtitle?: string;
@@ -42,6 +42,7 @@ const StyledSubitem = styled.div`
     position: relative;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
+    color: ${theme.darkColors.secondaryFont};
 `
 
 const StyledSubTitle = styled.div`
@@ -49,7 +50,7 @@ const StyledSubTitle = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
+    
     h3 {
         margin: 0;
         font-style: normal;
@@ -73,7 +74,7 @@ const Tags = styled.div`
         bottom: 0;
         width: 100%;
         height: 2px;
-        background: ${Theme.DarkColors.Font};
+        background: ${theme.darkColors.secondaryFont};
         //background: linear-gradient(to right, #E70FAA, #00C0FD);
         border-radius: 2px;
         
@@ -84,7 +85,7 @@ const TagsItem = styled.div`
     padding-bottom: 1rem;
 
     svg {
-        fill: ${Theme.DarkColors.Font};
+        fill: ${theme.darkColors.font};
     }
 
     

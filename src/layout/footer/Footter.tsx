@@ -4,7 +4,7 @@ import {Logo} from "../../components/logo/Logo.tsx";
 import {SocialIcons} from "../../components/socialBar/SocialIcons.tsx";
 import {Menu} from "../../components/menu/Menu.tsx";
 import {Container} from "../../components/container/Container.ts";
-import {StyledLink} from "../../components/StyledLink.tsx";
+import {StyledLink} from "../../components/styledLink/StyledLink.tsx";
 import {items} from "../header/Header.tsx";
 
 export const Footter = () => {
@@ -15,11 +15,12 @@ export const Footter = () => {
 
                     <Logo/>
 
-                    <FlexWrapper gap={"2rem"}>
-                        <StyledLink>+91 12345 09876</StyledLink>
-                        <StyledLink>info@example.com</StyledLink>
+                    <FlexWrapper>
+                        <StyledNum>
+                            <StyledLink>+91 12345 09876</StyledLink>
+                            <StyledLink>info@example.com</StyledLink>
+                        </StyledNum>
                         <SocialIcons/>
-
                     </FlexWrapper>
                 </FlexWrapper>
 
@@ -38,4 +39,10 @@ const StyledFooter = styled.footer`
 `
 
 const Copyright = styled.small`
+`
+
+const StyledNum = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
 `

@@ -6,9 +6,10 @@ export const StyledLink = styled.a`
     font-size: 20px;
     font-weight: normal;
     display: flex;
-    align-items: center; // вертикаль 
+    align-items: center;
+    gap: 6px;// вертикаль 
     justify-content: center; // горизонталь
-    gap: 5px;
+    
     color: inherit;
     text-decoration: none;
     

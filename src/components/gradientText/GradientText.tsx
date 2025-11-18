@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {Theme} from "../../styles/Theme.ts";
+import {theme} from "../../styles/Theme.ts";
 
 export const GradientText = styled.span`
-    background: ${Theme.DarkColors.Gradient};
+    background: ${theme.darkColors.gradient};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `;

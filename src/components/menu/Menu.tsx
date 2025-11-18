@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledLink} from "../StyledLink.tsx";
+import { StyledLink} from "../styledLink/StyledLink.tsx";
 
 
 export const Menu = (props: { menuItem: Array<string> }) => {
