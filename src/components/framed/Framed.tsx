@@ -18,7 +18,7 @@ const Square = styled.div<{ rotate: string }>`
     width: 120%;
     height: 120%;
     border: 1px solid;
-    border-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3)) 1;;
+    border-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3)) 1;
     transform: rotate(${p => p.rotate});
     top: -10%;
     left: -5%;

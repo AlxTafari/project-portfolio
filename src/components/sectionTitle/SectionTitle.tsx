@@ -24,11 +24,11 @@ const StyledSectionTitle = styled.div<SectionTitlePropsType>`
 `
 
 const StyledTitle = styled.h2`
-    padding: 0 0 48px 0;
+    margin: 48px 0;
     font-size: 48px;
 `
 
 const StyledDescription = styled.p`
-    padding: 0 0 110px 0;
+    margin: 0 0 110px 0;
     font-size: 28px;
 `

@@ -22,7 +22,8 @@ export const Projects = () => {
                                 image={project.image}
                                 title={project.name}
                                 description={project.description}
-                                techStack={project.techStack}/>
+                                techStack={project.techStack}
+                            />
                         )
                     })}
                 </GridWrapper>

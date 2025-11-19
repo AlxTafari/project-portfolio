@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Icon} from "../icon/Icon.tsx";
 import {theme} from "../../styles/Theme.ts";
+import {GridWrapper} from "../gridWrapper/GridWrapper.tsx";
 
 type SubitemPropsType = {
     subtitle?: string;
@@ -20,18 +21,20 @@ export const Subitem = (props: SubitemPropsType) => {
             </StyledSubTitle>
 
             <Tags>
-                <TagsItem>
+                <GridWrapper columnTemplate="auto 1fr auto">
+                <Tag>
                     <Icon iconId={"building"} width={"12px"} height={"12px"} viewBox={"0 0 12 12"} />
-                    <span>{props.city}</span>
-                </TagsItem>
-                <TagsItem>
-                    <Icon iconId={"location"} width={"12px"} height={"12px"} viewBox={"0 0 12 12"} />
                     <span>{props.company}</span>
-                </TagsItem>
-                <TagsItem style={{ marginLeft: "auto" }}>
+                </Tag>
+                <Tag>
+                    <Icon iconId={"location"} width={"12px"} height={"12px"} viewBox={"0 0 12 12"} />
+                    <span>{props.city}</span>
+                </Tag>
+                <Tag style={{ marginLeft: "auto" }}>
                     <Icon iconId={"date"} width={"16px"} height={"12px"} viewBox={"0 0 16 12"} />
                     <time dateTime={props.date}>{props.date}</time>
-                </TagsItem>
+                </Tag>
+                </GridWrapper>
             </Tags>
          </StyledSubitem>
 
@@ -58,12 +61,9 @@ const StyledSubTitle = styled.div`
 `
 
 const Tags = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     gap: 1rem;
     position: relative;
-    padding: 10px 0;
+    padding: 10px 0 20px 0;
 
 
 
@@ -80,9 +80,8 @@ const Tags = styled.div`
         
 `;
 
-const TagsItem = styled.div`
-    gap: 10px;
-    padding-bottom: 1rem;
+const Tag = styled.div`
+    
 
     svg {
         fill: ${theme.darkColors.font};

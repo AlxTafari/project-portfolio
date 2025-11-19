@@ -4,16 +4,16 @@ import {theme} from "../../styles/Theme.ts";
 export const StyledLink = styled.a`
     width: auto;
     height: auto;
-    font-size: 20px;
-    font-weight: normal;
     display: flex;
     align-items: center;
-    gap: 6px;// вертикаль 
-    justify-content: center; // горизонталь
+    gap: 6px;
+    white-space: nowrap;
+    justify-content: center;
     color: inherit;
     text-decoration: none;
     transition: color 0.5s ease;
     cursor: pointer;
+    
     
     svg {
         fill: currentColor; /* ← ключевой момент! */

@@ -3,7 +3,7 @@ import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {Subitem} from "../../../components/subitem/Subitem.tsx";
 import {Container} from "../../../components/container/Container.ts";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
-import bigSquare from "../../../assets/img/drawing.svg"
+import bigSquare from "../../../assets/img/bigbigSquare.svg"
 import {BigSquareStyled} from "../../../components/bigSquare/BigSquareStyled.tsx";
 
 export const About = () => {
@@ -65,7 +65,6 @@ export const About = () => {
 };
 
 const StyledAbout = styled.section`
-    min-height: 100vh;
     display: flex;
     position: relative;
     overflow: hidden;
@@ -75,12 +74,12 @@ const StyledBlocks = styled.div`
     
     h2 {
         font-size: 42px;
-        padding: 38px 0;
+        margin: 38px 0;
     }
 
     p {
         font-size: 18px;
-        padding: 0;
+        margin: 0;
     }
 
     max-width: 710px;

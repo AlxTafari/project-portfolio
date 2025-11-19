@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
-import {StyledLink} from "../../../components/styledLink/StyledLink.tsx";
 import {Container} from "../../../components/container/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
 

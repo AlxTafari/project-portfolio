@@ -1,28 +1,31 @@
-import {Photo} from "../../../assets/img/skills/ImportImages.tsx";
-import styled from "styled-components";
+import {Icon} from "../../../components/icon/Icon.tsx";
+import {GridWrapper} from "../../../components/gridWrapper/GridWrapper.tsx";
 
-type SkillPropsType = {
-    photo: keyof typeof Photo;
-}
+export const skillsBox = [
+    "html",
+    "type-css",
+    "js",
+    "react",
+    "redux",
+    "bootstrap",
+    "tailwind",
+    "saas",
+    "git-skill",
+    "cib_greensock",
+    "vscode",
+    "github-skill",
 
-export const Skill = (props: SkillPropsType) => {
+];
+
+export const Skill = (props: { skillItem: Array<string> }) => {
     return (
-        <StyledSkill>
-
-            <StyledImg src={Photo[props.photo]} alt={props.photo}/>
-
-        </StyledSkill>
+        <GridWrapper columns={6} gap={"90px"}>
+                {props.skillItem.map((item, index) => {
+                        return (
+                            <Icon key={index} iconId={item} width={"120"} height={"120"} viewBox={"0 0 120 120"}/>
+                        )
+                    }
+                )}
+        </GridWrapper>
     );
 };
-
-
-const StyledSkill = styled.div`
-    margin-bottom: 3rem;
-    width: 100%;
-`
-const StyledImg = styled.img`
-    width: auto; /* естественная ширина */
-    height: auto; /* естественная высота */
-    max-width: 100%; /* не превышать контейнер */
-    display: block; /* убрать пробелы снизу, если нужно */
-`;

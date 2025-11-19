@@ -3,7 +3,8 @@ import photo from "../../../assets/img/prj6.webp"
 import {Container} from "../../../components/container/Container.ts";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {GradientText} from "../../../components/gradientText/GradientText.tsx";
-import {Framed} from "../../../components/framed/Framed.tsx";
+import abstract from "../../../assets/img/abstract.svg";
+
 export const Main = () => {
     return (
         <StyledMain>
@@ -15,9 +16,11 @@ export const Main = () => {
                         <GradientText>Alexander</GradientText>
                         <span>I am Web Developer</span>
                     </StyledHello>
-                    <Framed>
+
+                    <PhotoWrapper>
                         <Photo src={photo}/>
-                    </Framed>
+                    </PhotoWrapper>
+
                 </FlexWrapper>
             </Container>
         </StyledMain>
@@ -27,6 +30,7 @@ export const Main = () => {
 const StyledMain = styled.section`
     min-height: 100vh;
     display: flex;
+    align-items: center;
     overflow: hidden;
 
 `
@@ -40,14 +44,42 @@ const StyledHello = styled.h1`
     font-size: 58px;
 `
 
-const Photo = styled.img`
+const PhotoWrapper = styled.div`
     width: 350px;
     height: 350px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
-    object-fit: cover;
+    box-sizing: border-box;
     padding: 8px;
     background: linear-gradient(to right, #E70FAA, #00C0FD);
-    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    
+    
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200%;
+        height: 200%;
+        z-index: -1;
+        
+        background-image: url("${abstract}");
+        background-size: cover;
+        background-position: center;
+    }
+    
+`
+
+const Photo = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    //background: linear-gradient(to right, #E70FAA, #00C0FD);
+    //box-sizing: border-box;
 
 `
 //

@@ -23,7 +23,7 @@ export const GlobalStyled = createGlobalStyle`
     }
     
     section {
-        padding: 0 0 100px 0;
+        padding: 100px 0;
     }
     
     p {

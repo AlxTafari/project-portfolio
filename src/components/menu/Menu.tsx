@@ -18,6 +18,9 @@ export const Menu = (props: { menuItem: Array<string> }) => {
 };
 
 const StyledMenu = styled.nav`
+    font-size: 20px;
+    margin-right: 50px;
+
 
     a {
         text-decoration: none;

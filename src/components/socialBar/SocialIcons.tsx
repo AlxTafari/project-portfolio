@@ -6,13 +6,13 @@ export const SocialIcons = () => {
     return (
         <StyledSocialBar>
             <StyledLink href="">
-                <Icon iconId={"telegram"} width={"40"} height={"40"} viewBox={"0 0 29 29"} />
+                <Icon iconId={"telegram"} width={"30"} height={"30"} viewBox={"0 0 30 30"} />
             </StyledLink>
             <StyledLink href="">
-                <Icon iconId={"linkedin"} width={"40"} height={"40"} viewBox={"0 0 40 40"} />
+                <Icon iconId={"linkedin"} width={"30"} height={"30"} viewBox={"0 0 30 30"} />
             </StyledLink>
             <StyledLink href="">
-                <Icon iconId={"git"} width={"40"} height={"40"} viewBox={"0 0 40 40"}/>
+                <Icon iconId={"git"} width={"30"} height={"30"} viewBox={"0 0 30 30"}/>
             </StyledLink>
         </StyledSocialBar>
     );
@@ -21,7 +21,5 @@ export const SocialIcons = () => {
 const StyledSocialBar = styled.nav`
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-left: 50px;
-    
-`
+    gap: 16px;
+   `
