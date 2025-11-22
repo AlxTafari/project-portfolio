@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {Skill, skillsBox} from "./Skill.tsx";
 import {Container} from "../../../components/container/Container.ts";
+import {theme} from "../../../styles/Theme.ts";
 
 export const Skills = () => {
     return (
@@ -20,6 +21,10 @@ export const Skills = () => {
 
 const StyledSkills = styled.section`
     display: flex;
+
+    @media ${theme.media.tablet} {
+        display: none;
+    }
 
 `
 

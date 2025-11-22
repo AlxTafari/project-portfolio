@@ -4,12 +4,13 @@ import {Container} from "../../../components/container/Container.ts";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {GradientText} from "../../../components/gradientText/GradientText.tsx";
 import abstract from "../../../assets/img/abstract.svg";
+import {theme} from "../../../styles/Theme.ts";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper justify={"space-between"} align={"center"}>
+                <FlexWrapper justify={"space-between"} align={"center"} wrap={"wrap"} >
                     <StyledHello>
                         <span>Hi 👋,</span>
                         <span>My name is</span>
@@ -18,7 +19,7 @@ export const Main = () => {
                     </StyledHello>
 
                     <PhotoWrapper>
-                        <Photo src={photo}/>
+                        <Photo src={photo} alt={"main photo"}/>
                     </PhotoWrapper>
 
                 </FlexWrapper>
@@ -32,7 +33,7 @@ const StyledMain = styled.section`
     display: flex;
     align-items: center;
     overflow: hidden;
-
+    
 `
 
 const StyledHello = styled.h1`
@@ -42,6 +43,14 @@ const StyledHello = styled.h1`
     line-height: 70px;
     letter-spacing: -1px;
     font-size: 58px;
+
+    @media ${theme.media.tablet} {
+        font-size: 48px;
+        margin-top: 40px;
+        line-height: 50px;
+    }
+    
+    
 `
 
 const PhotoWrapper = styled.div`
@@ -54,8 +63,16 @@ const PhotoWrapper = styled.div`
     background: linear-gradient(to right, #E70FAA, #00C0FD);
     position: relative;
     z-index: 1;
-    
-    
+
+    @media ${theme.media.tablet} {
+        width: 300px;
+        height: 300px;
+        margin-top: 40px;
+        padding: 5px;
+
+    }
+
+
     &::before {
         content: "";
         position: absolute;
@@ -69,6 +86,10 @@ const PhotoWrapper = styled.div`
         background-image: url("${abstract}");
         background-size: cover;
         background-position: center;
+        
+        @media ${theme.media.tablet} {
+            display: none;
+        }
     }
     
 `

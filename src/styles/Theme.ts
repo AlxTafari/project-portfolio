@@ -1,5 +1,5 @@
 export const theme = {
-    darkColors: {
+    colors: {
         primaryBg: "#1F1F20",
         secondaryBg: "#363636",
         font: "#D9D9D9",
@@ -12,9 +12,9 @@ export const theme = {
         placeholderColor: "#717171",
 
     },
-    lightColors: {
-        primaryBg: "#ffffff",
-
+    media: {
+        tablet: "screen and (max-width: 768px)",
+        mobile: "screen and (max-width: 576px)"
     },
 }
 

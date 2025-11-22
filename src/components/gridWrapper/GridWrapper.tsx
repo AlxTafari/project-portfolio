@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {theme} from "../../styles/Theme.ts";
 
 type GridWrapperProps = {
     columnTemplate?: string;
@@ -20,4 +21,8 @@ export const GridWrapper = styled.div<GridWrapperProps>`
     };
     gap: ${({gap}) => gap || "1rem"};
     row-gap: ${({rowGap, gap}) => rowGap || gap || "1rem"};
-`;
+    @media ${theme.media.tablet} {
+        grid-template-columns: 1fr;
+    }
+    `
+;

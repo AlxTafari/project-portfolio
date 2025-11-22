@@ -5,9 +5,9 @@ export const StyledProjectWrapper = styled.article`
     width: 100%;
     min-height: 540px;
     border-radius: 20px;
-    background-color: ${theme.darkColors.secondaryBg};
-    color: ${theme.darkColors.secondaryFont};
-    box-shadow: ${theme.darkColors.shadow};
+    background-color: ${theme.colors.secondaryBg};
+    color: ${theme.colors.secondaryFont};
+    box-shadow: ${theme.colors.shadow};
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -18,6 +18,10 @@ export const StyledProjectWrapper = styled.article`
     a {
         text-decoration: underline;
         margin: 0 20px;
+    }
+    
+    @media ${theme.media.tablet} {
+        max-width: 560px;
     }
 `
 
@@ -83,5 +87,5 @@ export const StyledLinkBox = styled.div`
     display: flex;
     gap: 10px;
     justify-content: space-between;
-    color: ${theme.darkColors.font};
+    color: ${theme.colors.font};
 `

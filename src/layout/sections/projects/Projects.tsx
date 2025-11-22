@@ -4,6 +4,7 @@ import {Container} from "../../../components/container/Container.ts";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {projectsHub} from "./projectHub.ts";
 import ProjectCard from "./ProjectCard.tsx";
+import {theme} from "../../../styles/Theme.ts";
 
 export const Projects = () => {
     return (
@@ -16,7 +17,7 @@ export const Projects = () => {
                 />
                 <GridWrapper columns={3} gap={"2rem"} rowGap={"3rem"}>
                     {Object.keys(projectsHub).map((projectKey) => {
-                        const project = projectsHub[projectKey]
+                        const project = projectsHub[projectKey as keyof typeof projectsHub]
                         return (
                             <ProjectCard
                                 image={project.image}
@@ -34,5 +35,9 @@ export const Projects = () => {
 
 const ProjectsTestStyled = styled.section`
     display: flex;
-    padding: 0 0 177px 0;
+
+    @media ${theme.media.tablet} {
+        padding-left: 12%;
+    }
+    
 `

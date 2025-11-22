@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { StyledLink} from "../styledLink/StyledLink.tsx";
+import {theme} from "../../styles/Theme.ts";
 
 
 export const Menu = (props: { menuItem: Array<string> }) => {
@@ -29,5 +30,9 @@ const StyledMenu = styled.nav`
     ul {
         display: flex;
         gap: 64px;
+    }
+
+    @media ${theme.media.tablet} {
+        display: none;
     }
 `

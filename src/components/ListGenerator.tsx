@@ -5,7 +5,7 @@ type ListPropsType = {
 
 }
 
-export const List = (props: ListPropsType) => {
+export const ListGenerator = (props: ListPropsType) => {
     return (
             <StyledTechStack>
                 <span>Tech Stack: </span>

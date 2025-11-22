@@ -21,6 +21,6 @@ export const StyledLink = styled.a`
     }
     
     &:hover {
-        color: ${theme.darkColors.accent};
+        color: ${theme.colors.accent};
     }
 `

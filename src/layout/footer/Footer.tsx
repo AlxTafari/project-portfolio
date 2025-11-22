@@ -49,13 +49,14 @@ const Copyright = styled.small`
 const StyledNum = styled.div`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 60px;
 `
 const FooterBox = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 2px solid ${theme.darkColors.borderColor};
+    border-bottom: 2px solid ${theme.colors.borderColor};
     padding-bottom: 40px;
     margin-bottom: 40px;
     

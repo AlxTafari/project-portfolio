@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Icon} from "../icon/Icon.tsx";
 import {StyledLink} from "../styledLink/StyledLink.tsx";
+import {theme} from "../../styles/Theme.ts";
 
 export const SocialIcons = () => {
     return (
@@ -22,4 +23,8 @@ const StyledSocialBar = styled.nav`
     display: flex;
     align-items: center;
     gap: 16px;
+
+    @media ${theme.media.tablet} {
+        display: none;
+    }
    `

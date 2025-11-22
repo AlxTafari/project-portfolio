@@ -4,8 +4,9 @@ import {Menu} from "../../components/menu/Menu.tsx";
 import {SocialIcons} from "../../components/socialBar/SocialIcons.tsx";
 import {Container} from "../../components/container/Container.ts";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
+import {MobileMenu} from "../../components/mobileMenu/MobileMenu.tsx";
 
-export const items = ["Home", "About", "Tech Stack", "Projects", "Contact"]
+export const items= ["Home", "About", "Tech Stack", "Projects", "Contact"]
 
 export const Header = () => {
     return (
@@ -14,6 +15,7 @@ export const Header = () => {
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo/>
                     <FlexWrapper justify="flex-end" align={"center"}>
+                        <MobileMenu menuItem={items} />
                         <Menu menuItem={items}/>
                         <SocialIcons/>
                     </FlexWrapper>

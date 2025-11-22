@@ -17,8 +17,9 @@ export const GlobalStyled = createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: ${theme.darkColors.font};
+        color: ${theme.colors.font};
         line-height: 1.2;
+        //min-width: 360px;
         
     }
     
@@ -27,7 +28,7 @@ export const GlobalStyled = createGlobalStyle`
     }
     
     p {
-        color: ${theme.darkColors.secondaryFont};
+        color: ${theme.colors.secondaryFont};
     }
     
     a {
@@ -44,7 +45,7 @@ export const GlobalStyled = createGlobalStyle`
     }
     
     section, header, footer {
-        background: ${theme.darkColors.primaryBg};
+        background: ${theme.colors.primaryBg};
     }
     
 `

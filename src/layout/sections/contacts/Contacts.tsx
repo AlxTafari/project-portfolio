@@ -53,8 +53,8 @@ const StyledForm = styled.form`
 
 const Field = styled.input`
     width: 100%;
-    border: 1px solid ${theme.darkColors.borderColor};
-    background-color: ${theme.darkColors.secondaryBg};
+    border: 1px solid ${theme.colors.borderColor};
+    background-color: ${theme.colors.secondaryBg};
     padding: 8px 14px;
 
     font-family: Poppins, sans-serif;
@@ -62,16 +62,16 @@ const Field = styled.input`
     font-size: 12px;
     letter-spacing: 0.05em;
     
-    color: ${theme.darkColors.font};
+    color: ${theme.colors.font};
     
     ::placeholder {
-        color: ${theme.darkColors.secondaryFont};
+        color: ${theme.colors.secondaryFont};
     }
     
     text-transform: capitalize;
 
     &:focus-visible {
-        outline: 2px solid ${theme.darkColors.borderColor};
+        outline: 2px solid ${theme.colors.borderColor};
     }
 `
 const StyledButton = styled.button`
@@ -80,9 +80,9 @@ const StyledButton = styled.button`
     font-weight: 300;
     font-size: 16px;
     padding: 6px;
-    background-color: ${theme.darkColors.secondaryBg};
-    color: ${theme.darkColors.secondaryFont};
-    border: 1px solid ${theme.darkColors.borderColor};
+    background-color: ${theme.colors.secondaryBg};
+    color: ${theme.colors.secondaryFont};
+    border: 1px solid ${theme.colors.borderColor};
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -100,15 +100,15 @@ const StyledButton = styled.button`
     }
 
     &:hover {
-        color: ${theme.darkColors.accent};
+        color: ${theme.colors.accent};
 
         &::before {
             height: 100%;
-            border-color: ${theme.darkColors.accent};
+            border-color: ${theme.colors.accent};
         }
     }
 
     &:focus-visible {
-        outline: 2px solid ${theme.darkColors.borderColor};}
+        outline: 2px solid ${theme.colors.borderColor};}
     
 `
