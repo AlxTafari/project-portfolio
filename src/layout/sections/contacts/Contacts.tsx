@@ -6,7 +6,7 @@ import {theme} from "../../../styles/Theme.ts";
 
 export const Contacts = () => {
     return (
-        <StyledContacts>
+        <StyledContactsSection id="contact">
             <Container>
                 <FlexWrapper>
                     <SectionTitle title="For any questions please message me"/>
@@ -24,12 +24,11 @@ export const Contacts = () => {
 
 
             </Container>
-        </StyledContacts>
+        </StyledContactsSection>
     );
 };
 
-const StyledContacts = styled.section`
-    
+const StyledContactsSection = styled.section`
 `
 
 const StyledForm = styled.form`

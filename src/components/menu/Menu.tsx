@@ -3,13 +3,13 @@ import { StyledLink} from "../styledLink/StyledLink.tsx";
 import {theme} from "../../styles/Theme.ts";
 
 
-export const Menu = (props: { menuItem: Array<string> }) => {
+export const Menu = (props: { menuItem: Array<{ title: string; link: string }> }) => {
     return (
         <StyledMenu>
             <ul>
                 {props.menuItem.map((item, index) => {
                         return  <li key={index}>
-                            <StyledLink href="#">{item}</StyledLink>
+                            <StyledLink href={`#${item.title.toLowerCase()}`}>{item.title}</StyledLink>
                                 </li>
                     }
                 )}

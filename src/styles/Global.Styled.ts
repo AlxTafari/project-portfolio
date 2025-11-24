@@ -9,7 +9,10 @@ export const GlobalStyled = createGlobalStyle`
         margin: 0;
         box-sizing: border-box;
     }
-
+    html {
+        scroll-behavior: smooth;
+    }
+    
     body {
         margin: 0;
         font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -19,12 +22,16 @@ export const GlobalStyled = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         color: ${theme.colors.font};
         line-height: 1.2;
-        //min-width: 360px;
-        
+        min-width: 360px;
+
     }
     
     section {
         padding: 100px 0;
+
+        @media ${theme.media.mobile} {
+            padding: 70px 0;
+        }
     }
     
     p {

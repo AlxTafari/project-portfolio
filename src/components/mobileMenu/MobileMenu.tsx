@@ -1,32 +1,39 @@
 import styled, {css} from "styled-components";
 import {StyledLink} from "../styledLink/StyledLink.tsx";
 import {theme} from "../../styles/Theme.ts";
+import {useState} from "react";
 
 
-export const MobileMenu = (props: { menuItem: Array<string> }) => {
+export const MobileMenu = (props: { menuItem: Array<{ title: string; link: string }> }) => {
+    const [menuIsOpen, setMenuIsOpen] = useState(false)
+    const onBurgerBtnClick = () => {
+        setMenuIsOpen(!menuIsOpen)
+    }
+
     return (
         <StyledMobileMenu>
-            <BurgerButton isOpen={false}>
+            <BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
                 <span></span>
             </BurgerButton>
-            <MobileMenuPopup isOpen={false}>
+            <MobileMenuPopup isOpen={menuIsOpen} onClick={() => setMenuIsOpen(false)}>
                 <ul>
                     {props.menuItem.map((item, index) => {
-                            return <li key={index}>
-                                <StyledLink href="#">{item}</StyledLink>
+                            return  <li key={index}>
+                                <StyledLink href={`#${item.link}`}>{item.title}</StyledLink>
                             </li>
                         }
                     )}
                 </ul>
             </MobileMenuPopup>
         </StyledMobileMenu>
-    );
+    )
+
 };
 
 const StyledMobileMenu = styled.nav`
     display: none;
     font-size: 48px;
-    
+
     @media ${theme.media.tablet} {
         display: block;
     }
@@ -37,7 +44,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     right: -100px;
     width: 200px;
     height: 200px;
-    z-index: 9999999;
+    z-index: 999999;
 
     span {
         display: block;
@@ -47,16 +54,15 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
         position: absolute;
         left: 30px;
         bottom: 50px;
-        
-        
+
+
         ${props => props.isOpen && css<{ isOpen: boolean }>`
             background-color: rgba(255, 255, 255, 0);
         `}
-        
         &::before {
             content: "";
             display: block;
-            width: 48px;
+            width: 36px;
             height: 3px;
             background-color: ${theme.colors.font};
             position: absolute;
@@ -64,23 +70,23 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
 
             ${props => props.isOpen && css<{ isOpen: boolean }>`
                 transform: rotate(-45deg) translateY(0);
-
+                width: 48px;
             `}
         }
 
         &::after {
             content: "";
             display: block;
-            width: 36px;
+            width: 48px;
             height: 3px;
             background-color: ${theme.colors.font};
             position: absolute;
-            left: 12px;
-            transform: translateY(10px) ;
+            left: 0;
+            transform: translateY(10px);
 
             ${props => props.isOpen && css<{ isOpen: boolean }>`
                 transform: rotate(45deg) translateY(0);
-                width: 48px;
+
 
             `}
         }

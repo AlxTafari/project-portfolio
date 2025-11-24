@@ -6,7 +6,7 @@ import proj5 from "../../../assets/img/prj5.webp";
 import proj6 from "../../../assets/img/prj6.webp";
 
 
-export const projectsHub = {
+export const projectsData = {
     project1: {
         name: "Project 1 Tile goes here",
         description: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",

@@ -5,12 +5,13 @@ import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {GradientText} from "../../../components/gradientText/GradientText.tsx";
 import abstract from "../../../assets/img/abstract.svg";
 import {theme} from "../../../styles/Theme.ts";
+import {fluidSize, font} from "../../../styles/Common.ts";
 
 export const Main = () => {
     return (
-        <StyledMain>
+        <StyledMain id="home">
             <Container>
-                <FlexWrapper justify={"space-between"} align={"center"} wrap={"wrap"} >
+                <FlexWrapper justify={"space-around"} align={"center"} wrap={"wrap"} >
                     <StyledHello>
                         <span>Hi 👋,</span>
                         <span>My name is</span>
@@ -37,25 +38,17 @@ const StyledMain = styled.section`
 `
 
 const StyledHello = styled.h1`
+    ${font({lineHeight: 1.2, weight: 600, Fmax: 50, Fmin: 32})};
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     flex-direction: column;
-    line-height: 70px;
     letter-spacing: -1px;
-    font-size: 58px;
-
-    @media ${theme.media.tablet} {
-        font-size: 48px;
-        margin-top: 40px;
-        line-height: 50px;
-    }
-    
+    white-space: wrap;
     
 `
 
 const PhotoWrapper = styled.div`
-    width: 350px;
-    height: 350px;
+    ${fluidSize({ minWidth:270, maxWidth:360, minHeight: 270, maxHeight: 360 })};
     aspect-ratio: 1/1;
     border-radius: 50%;
     box-sizing: border-box;
@@ -65,14 +58,11 @@ const PhotoWrapper = styled.div`
     z-index: 1;
 
     @media ${theme.media.tablet} {
-        width: 300px;
-        height: 300px;
-        margin-top: 40px;
+        display: flex;  
+        margin-top: 60px;
         padding: 5px;
-
     }
-
-
+    
     &::before {
         content: "";
         position: absolute;
@@ -87,7 +77,7 @@ const PhotoWrapper = styled.div`
         background-size: cover;
         background-position: center;
         
-        @media ${theme.media.tablet} {
+        @media ${theme.media.mobile} {
             display: none;
         }
     }
@@ -99,22 +89,4 @@ const Photo = styled.img`
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    //background: linear-gradient(to right, #E70FAA, #00C0FD);
-    //box-sizing: border-box;
-
 `
-//
-// const PhotoWrapper = styled.div`
-//
-//     position: relative;
-//     z-index: 0;
-//
-//     &::before {
-//         content: '';
-//         position: absolute;
-//         height: 444px;
-//         width: 444px;
-//         border: 1px solid red;
-//         z-index: -1;
-//         transform: rotate(30deg);
-//     }`

@@ -1,38 +1,31 @@
 import styled from "styled-components";
-import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
 import {Logo} from "../../components/logo/Logo.tsx";
-import {SocialIcons} from "../../components/socialBar/SocialIcons.tsx";
 import {Menu} from "../../components/menu/Menu.tsx";
 import {Container} from "../../components/container/Container.ts";
-import {StyledLink} from "../../components/styledLink/StyledLink.tsx";
 import {items} from "../header/Header.tsx";
 import {GradientText} from "../../components/gradientText/GradientText.tsx";
 import {theme} from "../../styles/Theme.ts";
+import {ContactsBlock} from "../../components/contactsBlock/ContactsBlock.tsx";
 
 export const Footer = () => {
     return (
         <StyledFooter>
             <Container>
-                <FooterBox>
+                <FooterBox $border $padding $margin>
 
+                    <Logo className={"FooterLogo"}/>
 
-                    <Logo/>
-
-                    <FlexWrapper>
-                        <StyledNum>
-                            <StyledLink>+91 12345 09876</StyledLink>
-                            <StyledLink>info@example.com</StyledLink>
-                            <SocialIcons/>
-                        </StyledNum>
-                    </FlexWrapper>
+                    <ContactsBlock/>
 
                 </FooterBox>
 
-                <FlexWrapper justify="space-between">
+                <FooterBox>
+
                     <Menu menuItem={items}/>
+
                     <Copyright>Designed and built by <GradientText>AlxTafari</GradientText></Copyright>
 
-                </FlexWrapper>
+                </FooterBox>
             </Container>
         </StyledFooter>
     );
@@ -40,30 +33,45 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
     padding: 60px 0;
+    position: relative;
+    
 `
 
 const Copyright = styled.small`
     opacity: 0.8;
-`
 
-const StyledNum = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 60px;
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
 `
-const FooterBox = styled.div`
+type FooterBoxPropsType = {
+    $border?: boolean;
+    $padding?: boolean;
+    $margin?: boolean;
+}
+
+const FooterBox = styled.div<FooterBoxPropsType>`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 2px solid ${theme.colors.borderColor};
-    padding-bottom: 40px;
-    margin-bottom: 40px;
+    border-bottom: ${({ $border }) =>
+            $border ? `2px solid ${theme.colors.borderColor}` : "none"};
     
+    padding-bottom: ${({ $padding }) => $padding ? '40px' : "0"};
+    margin-bottom: ${({ $margin }) => $margin ? '40px' : '0'};
+    gap: 30px;
+    
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .FooterLogo {
+            display: none;
+        };
+    }
+
 `
-
-
-// const Divider = styled.div`
-//     border: 2px solid ${theme.darkColors.borderColor};
-//     margin: 40px 0;
-// `

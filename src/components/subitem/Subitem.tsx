@@ -3,6 +3,7 @@ import {Icon} from "../icon/Icon.tsx";
 import {theme} from "../../styles/Theme.ts";
 import {GridWrapper} from "../gridWrapper/GridWrapper.tsx";
 import {FlexWrapper} from "../flexWrapper/FlexWrapper.tsx";
+import {font} from "../../styles/Common.ts";
 
 type SubitemPropsType = {
     subtitle?: string;
@@ -22,7 +23,7 @@ export const Subitem = (props: SubitemPropsType) => {
             </StyledSubTitle>
 
             <Tags>
-                <GridWrapper columnTemplate="1fr 1fr" gap={"16px"}>
+                <GridWrapper columnTemplate="1fr 1fr" gap={"10px"}>
                     <FlexWrapper justify={"space-between"} align={"center"}>
                         <Tag>
                             <Icon iconId={"building"} width={"12px"} height={"12px"} viewBox={"0 0 12 12"}/>
@@ -34,7 +35,7 @@ export const Subitem = (props: SubitemPropsType) => {
                         </Tag>
                     </FlexWrapper>
                     <FlexWrapper justify={"flex-end"} align={"center"}>
-                        <Tag style={{marginLeft: "auto"}}>
+                        <Tag>
                             <Icon iconId={"date"} width={"16px"} height={"12px"} viewBox={"0 0 16 12"}/>
                             <time dateTime={props.date}>{props.date}</time>
                         </Tag>
@@ -51,6 +52,7 @@ const StyledSubitem = styled.div`
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
     color: ${theme.colors.secondaryFont};
+
 `
 
 const StyledSubTitle = styled.div`
@@ -58,18 +60,39 @@ const StyledSubTitle = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
+    
     h3 {
-        margin: 0;
-        font-style: normal;
+        ${font({Fmax: 20, Fmin: 16, weight: 400})};
+    }
+    
+    span {
+        ${font({Fmax: 10, Fmin: 10, weight: 400})};
+        white-space: nowrap;
+        position: relative;
+        z-index: 2;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -20%;
+            width: 140%;
+            height: 20px;
+            border: ${theme.colors.borderColor} 5px solid;
+            background-color: ${theme.colors.borderColor};
+            border-radius: 20px;
+            z-index: -1;
+        }
+        
     }
 `
 
 const Tags = styled.div`
+
     gap: 1rem;
     position: relative;
     padding: 10px 0 20px 0;
-
+    ${font({Fmax: 14, Fmin: 12, weight: 50, color: theme.colors.secondaryFont})};
 
     &::after {
         content: '';
@@ -78,18 +101,21 @@ const Tags = styled.div`
         bottom: 0;
         width: 100%;
         height: 2px;
-        background: ${theme.colors.secondaryFont};
-        //background: linear-gradient(to right, #E70FAA, #00C0FD);
+        background: linear-gradient(to right, #E70FAA, #00C0FD);
         border-radius: 2px;
+        white-space: nowrap;
+
+        svg {
+            fill: ${theme.colors.secondaryFont};
+        }
+
+        @media ${theme.media.mobile} {
+            span {
+
+            }
+        }
 
 `;
 
 const Tag = styled.div`
-
-
-    svg {
-        fill: ${theme.colors.font};
-    }
-
-
 `

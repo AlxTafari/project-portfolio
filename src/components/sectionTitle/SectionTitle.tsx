@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {font} from "../../styles/Common.ts";
+import {theme} from "../../styles/Theme.ts";
 
 
 type SectionTitlePropsType = {
@@ -25,10 +27,14 @@ const StyledSectionTitle = styled.div<SectionTitlePropsType>`
 
 const StyledTitle = styled.h2`
     margin: 48px 0;
-    font-size: 48px;
+    ${font({Fmax: 48, Fmin: 28, weight: 600, color: theme.colors.font})};
 `
 
 const StyledDescription = styled.p`
-    margin: 0 0 110px 0;
-    font-size: 28px;
+    margin: 0 0 100px 0;
+    ${font({Fmax: 32, Fmin: 16, weight: 300, color: theme.colors.secondaryFont} )};
+    
+    @media ${theme.media.mobile} {
+        margin: 0 0 60px 0;
+    }
 `

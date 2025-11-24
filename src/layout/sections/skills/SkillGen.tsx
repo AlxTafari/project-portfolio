@@ -17,9 +17,9 @@ export const skillsBox = [
 
 ];
 
-export const Skill = (props: { skillItem: Array<string> }) => {
+export const SkillGen = (props: { skillItem: Array<string> }) => {
     return (
-        <GridWrapper columns={6} gap={"90px"} minColumnWidth={"576px"}>
+        <GridWrapper gap={"30px"} rowGap={"50px"} minColumnWidth={"150px"} place={"center"} >
                 {props.skillItem.map((item, index) => {
                         return (
                             <Icon key={index} iconId={item} width={"120"} height={"120"} viewBox={"0 0 120 120"}/>

@@ -2,25 +2,26 @@ import styled from "styled-components";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {Subitem} from "../../../components/subitem/Subitem.tsx";
 import {Container} from "../../../components/container/Container.ts";
-import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import bigSquare from "../../../assets/img/bigbigSquare.svg"
 import {BigSquareStyled} from "../../../components/bigSquare/BigSquareStyled.tsx";
+import {font} from "../../../styles/Common.ts";
+import {theme} from "../../../styles/Theme.ts";
 
 export const About = () => {
     return (
-        <StyledAbout>
+        <StyledAbout id="about">
             <Container>
-                <FlexWrapper justify="space-between" align={"center"}>
                     <StyledBlocks>
                         <SectionTitle align={"start"}
                                       title={"About Me"}
                                       description={"The Generator App is an online tool that helps you to export ready-made templates ready to work as your\n" +
-                                              "                future website. It helps you to combine slides, panels and other components and export it as a set of\n" +
-                                              "                static files: HTML/CSS/JS."}>
+                                          "                future website. It helps you to combine slides, panels and other components and export it as a set of\n" +
+                                          "                static files: HTML/CSS/JS."}>
 
                         </SectionTitle>
+
                         <SectionTitle align={"start"}
-                                      title={"Work Experience"} >
+                                      title={"Work Experience"}>
 
                         </SectionTitle>
                         <Subitem
@@ -45,6 +46,7 @@ export const About = () => {
                             company={"Amazon IT"}
                             date={"Aug 2015 - Dec 2020"}
                         />
+
                         <SectionTitle align={"start"}
                                       title={"Education"}>
                         </SectionTitle>
@@ -57,7 +59,6 @@ export const About = () => {
                         />
 
                     </StyledBlocks>
-                </FlexWrapper>
             </Container>
             <BigSquareStyled src={bigSquare}/>
         </StyledAbout>
@@ -71,16 +72,20 @@ const StyledAbout = styled.section`
 `
 
 const StyledBlocks = styled.div`
+    display: flex;
+    flex-direction: column;
     
     h2 {
-        font-size: 42px;
+        ${font({Fmax: 42, Fmin: 28, weight: 600})};
         margin: 38px 0;
+        letter-spacing: -0.4px;
     }
 
     p {
-        font-size: 18px;
+        ${font({Fmax: 18, Fmin: 14, weight: 300, color: theme.colors.secondaryFont})};
         margin: 0;
     }
+    
 
     max-width: 710px;
 `

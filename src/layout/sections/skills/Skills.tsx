@@ -1,19 +1,18 @@
 import styled from "styled-components";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
-import {Skill, skillsBox} from "./Skill.tsx";
+import {SkillGen, skillsBox} from "./SkillGen.tsx";
 import {Container} from "../../../components/container/Container.ts";
-import {theme} from "../../../styles/Theme.ts";
 
 export const Skills = () => {
     return (
-        <StyledSkills>
+        <StyledSkills id="tech stack">
             <Container>
                     <SectionTitle
                         align={"center"}
                         title={"My Tech Stack"}
                         description={"Technologies I’ve been working with recently"}
                     />
-                        <Skill skillItem={skillsBox}/>
+                        <SkillGen skillItem={skillsBox}/>
             </Container>
         </StyledSkills>
     );
@@ -21,11 +20,7 @@ export const Skills = () => {
 
 const StyledSkills = styled.section`
     display: flex;
-
-    @media ${theme.media.tablet} {
-        display: none;
-    }
-
+    position: relative;
 `
 
 

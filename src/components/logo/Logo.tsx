@@ -1,12 +1,12 @@
 import { Icon } from "../icon/Icon.tsx";
-import styled from "styled-components";
 import {StyledLink} from "../styledLink/StyledLink.tsx";
-import {theme} from "../../styles/Theme.ts";
+
+type LogoPropsType = React.HTMLAttributes<HTMLAnchorElement>;
 
 
-export const Logo = () => {
+export const Logo = ({ className } : LogoPropsType) => {
     return (
-        <StyledLink href="">
+        <StyledLink href="#home" className={className}>
             <Icon iconId={"code"} fill={"Theme.DarkColors.Gradient"}/>
         </StyledLink>
     );

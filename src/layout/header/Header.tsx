@@ -5,19 +5,41 @@ import {SocialIcons} from "../../components/socialBar/SocialIcons.tsx";
 import {Container} from "../../components/container/Container.ts";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
 import {MobileMenu} from "../../components/mobileMenu/MobileMenu.tsx";
+import {theme} from "../../styles/Theme.ts";
 
-export const items= ["Home", "About", "Tech Stack", "Projects", "Contact"]
+export const items= [
+    {
+        title:"Home",
+        link:"home",
+    },
+    {
+        title:"About",
+        link:"about",
+    },
+    {
+        title:"Tech Stack",
+        link:"techStack",
+    },
+    {
+        title:"Projects",
+        link:"projects",
+    },
+    {
+        title:"Contact",
+        link:"contact",
+    },
+    ]
 
 export const Header = () => {
     return (
         <StyledHeader>
             <Container>
                 <FlexWrapper justify={"space-between"} align={"center"}>
-                    <Logo/>
+                    <Logo className={"headerLogo"}/>
                     <FlexWrapper justify="flex-end" align={"center"}>
                         <MobileMenu menuItem={items} />
                         <Menu menuItem={items}/>
-                        <SocialIcons/>
+                        <SocialIcons className={"headerSocialIcons"}/>
                     </FlexWrapper>
 
                 </FlexWrapper>
@@ -37,6 +59,13 @@ const StyledHeader = styled.header`
     left: 0;
     right: 0;
     z-index: 99999;
+
+    @media ${theme.media.mobile} {
+        .headerSocialIcons {
+            display: none;
+        }
+    }
+   
 `
 
 

@@ -3,10 +3,12 @@ import {Icon} from "../icon/Icon.tsx";
 import {StyledLink} from "../styledLink/StyledLink.tsx";
 import {theme} from "../../styles/Theme.ts";
 
-export const SocialIcons = () => {
+type SocialIconsPropsType = React.HTMLAttributes<HTMLAnchorElement>;
+
+export const SocialIcons = ({className} : SocialIconsPropsType) => {
     return (
-        <StyledSocialBar>
-            <StyledLink href="">
+        <StyledSocialBar className={className}>
+            <StyledLink href="https://t.me/AlxTafari">
                 <Icon iconId={"telegram"} width={"30"} height={"30"} viewBox={"0 0 30 30"} />
             </StyledLink>
             <StyledLink href="">
@@ -21,10 +23,12 @@ export const SocialIcons = () => {
 
 const StyledSocialBar = styled.nav`
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 16px;
-
-    @media ${theme.media.tablet} {
-        display: none;
+    gap: 20px;
+    
+    @media ${theme.media.mobile} {
+        justify-content: center;
+        gap: 16px;
     }
    `

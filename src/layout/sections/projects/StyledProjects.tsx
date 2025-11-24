@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
+import {font} from "../../../styles/Common.ts";
 
 export const StyledProjectWrapper = styled.article`
+    max-width: 375px;
     width: 100%;
     min-height: 540px;
     border-radius: 20px;
@@ -18,10 +20,10 @@ export const StyledProjectWrapper = styled.article`
     a {
         text-decoration: underline;
         margin: 0 20px;
-    }
-    
-    @media ${theme.media.tablet} {
-        max-width: 560px;
+        
+        @media ${theme.media.mobile} {
+            margin: 0 10px;
+        }
     }
 `
 
@@ -42,25 +44,21 @@ export const ProjectInformation = styled.div`
 
 `
 export const StyledProjectTitle = styled.h3`
-    font-family: Poppins, sans-serif;
-    font-weight: 500;
-    font-size: 28px;
+    ${font({family: "Poppins", weight: 500, Fmax: 28, Fmin: 22,})};
     text-align: center;
     margin-bottom: 18px;
 `
 export const StyledProjectDescription = styled.p`
-    font-weight: 200;
-    font-size: 18px;
+    ${font({family: "Poppins", weight: 200, Fmax: 18, Fmin: 16, color: theme.colors.secondaryFont})};
     margin-bottom: 12px;
 
 `
 
 export const StyledTechStack = styled.ul`
+    ${font({family: "Poppins", weight: 300, Fmax: 14, Fmin: 14, color: theme.colors.secondaryFont})};
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    font-weight: 300;
-    font-size: 14px;
     margin-bottom: 22px;
     gap: 5px;
     
@@ -78,8 +76,7 @@ export const StyledTechStack = styled.ul`
     }
 
     span {
-        font-size: 16px;
-        font-weight: 500;
+        ${font({family: "Poppins", weight: 500, Fmax: 16, Fmin: 15, color: theme.colors.font})};
     };
 `
 export const StyledLinkBox = styled.div`

@@ -2,22 +2,21 @@ import styled from "styled-components";
 import {GridWrapper} from "../../../components/gridWrapper/GridWrapper.tsx";
 import {Container} from "../../../components/container/Container.ts";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
-import {projectsHub} from "./projectHub.ts";
+import {projectsData} from "./projectsData.ts";
 import ProjectCard from "./ProjectCard.tsx";
-import {theme} from "../../../styles/Theme.ts";
 
 export const Projects = () => {
     return (
-        <ProjectsTestStyled>
+        <ProjectsTestStyled id="projects">
             <Container>
                 <SectionTitle
                     align={"center"}
                     title={"Projects"}
                     description={"Things I’ve built so far"}
                 />
-                <GridWrapper columns={3} gap={"2rem"} rowGap={"3rem"}>
-                    {Object.keys(projectsHub).map((projectKey) => {
-                        const project = projectsHub[projectKey as keyof typeof projectsHub]
+                <GridWrapper minColumnWidth={"320px"} gap={"2rem"} rowGap={"3rem"} place={"center"}>
+                    {Object.keys(projectsData).map((projectKey) => {
+                        const project = projectsData[projectKey as keyof typeof projectsData]
                         return (
                             <ProjectCard
                                 image={project.image}
@@ -35,9 +34,5 @@ export const Projects = () => {
 
 const ProjectsTestStyled = styled.section`
     display: flex;
-
-    @media ${theme.media.tablet} {
-        padding-left: 12%;
-    }
-    
+    position: relative;
 `
