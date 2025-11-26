@@ -34,7 +34,7 @@ const StyledMobileMenu = styled.nav`
     display: none;
     font-size: 48px;
 
-    @media ${theme.media.tablet} {
+    @media ${theme.media.tabletHeader} {
         display: block;
     }
 `

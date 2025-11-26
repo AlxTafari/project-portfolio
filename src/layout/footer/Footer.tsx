@@ -64,7 +64,7 @@ const FooterBox = styled.div<FooterBoxPropsType>`
     margin-bottom: ${({ $margin }) => $margin ? '40px' : '0'};
     gap: 30px;
     
-    @media ${theme.media.mobile} {
+    @media ${theme.media.tablet} {
         flex-direction: column;
         justify-content: center;
         align-items: center;

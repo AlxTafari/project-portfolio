@@ -36,7 +36,7 @@ export const Header = () => {
             <Container>
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo className={"headerLogo"}/>
-                    <FlexWrapper justify="flex-end" align={"center"}>
+                    <FlexWrapper justify="space-between" align={"center"} gap={"30px"}>
                         <MobileMenu menuItem={items} />
                         <Menu menuItem={items}/>
                         <SocialIcons className={"headerSocialIcons"}/>
@@ -60,7 +60,7 @@ const StyledHeader = styled.header`
     right: 0;
     z-index: 99999;
 
-    @media ${theme.media.mobile} {
+    @media ${theme.media.tabletHeader} {
         .headerSocialIcons {
             display: none;
         }

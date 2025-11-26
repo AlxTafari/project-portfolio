@@ -9,7 +9,7 @@ export const Menu = (props: { menuItem: Array<{ title: string; link: string }> }
             <ul>
                 {props.menuItem.map((item, index) => {
                         return  <li key={index}>
-                            <StyledLink href={`#${item.title.toLowerCase()}`}>{item.title}</StyledLink>
+                            <StyledLink href={`#${item.link.toLowerCase()}`}>{item.title}</StyledLink>
                                 </li>
                     }
                 )}
@@ -20,8 +20,8 @@ export const Menu = (props: { menuItem: Array<{ title: string; link: string }> }
 
 const StyledMenu = styled.nav`
     font-size: 20px;
-    margin-right: 50px;
-
+    //margin-right: 50px;
+    min-width: 567px;
 
     a {
         text-decoration: none;
@@ -29,10 +29,12 @@ const StyledMenu = styled.nav`
 
     ul {
         display: flex;
-        gap: 64px;
+        justify-content: space-between;
+
+
     }
 
-    @media ${theme.media.tablet} {
+    @media ${theme.media.tabletHeader} {
         display: none;
     }
 `

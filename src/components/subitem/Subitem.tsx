@@ -60,17 +60,17 @@ const StyledSubTitle = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    
+
     h3 {
         ${font({Fmax: 20, Fmin: 16, weight: 400})};
     }
-    
+
     span {
         ${font({Fmax: 10, Fmin: 10, weight: 400})};
         white-space: nowrap;
         position: relative;
         z-index: 2;
-        
+
         &::before {
             content: '';
             position: absolute;
@@ -83,7 +83,7 @@ const StyledSubTitle = styled.div`
             border-radius: 20px;
             z-index: -1;
         }
-        
+
     }
 `
 
@@ -100,19 +100,27 @@ const Tags = styled.div`
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 2px;
-        background: linear-gradient(to right, #E70FAA, #00C0FD);
+        height: 3px;
+        background: linear-gradient(to right, #E70FAA, #00C0FD, #E70FAA);
+        background-size: 200% 200%;
         border-radius: 2px;
         white-space: nowrap;
+        animation: gradientMove 4s linear infinite;
+        
+        @keyframes gradientMove {
+            0% { background-position: 0 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0 50%; }
 
-        svg {
-            fill: ${theme.colors.secondaryFont};
-        }
+    }
 
-        @media ${theme.media.mobile} {
-            span {
+    svg {
+        fill: ${theme.colors.secondaryFont};
+    }
 
-            }
+    @media ${theme.media.mobile} {
+        span {
+
         }
 
 `;

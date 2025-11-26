@@ -17,7 +17,7 @@ export const StyledContacts = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 55px;
     
     @media ${theme.media.mobile} {
         flex-direction: column-reverse;

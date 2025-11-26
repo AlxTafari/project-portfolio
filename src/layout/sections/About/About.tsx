@@ -2,8 +2,8 @@ import styled from "styled-components";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {Subitem} from "../../../components/subitem/Subitem.tsx";
 import {Container} from "../../../components/container/Container.ts";
-import bigSquare from "../../../assets/img/bigbigSquare.svg"
-import {BigSquareStyled} from "../../../components/bigSquare/BigSquareStyled.tsx";
+// import bigSquare from "../../../assets/img/bigbigSquare.svg"
+import { BigSquareTest} from "../../../components/bigSquare/BigSquareStyled.tsx";
 import {font} from "../../../styles/Common.ts";
 import {theme} from "../../../styles/Theme.ts";
 
@@ -60,7 +60,7 @@ export const About = () => {
 
                     </StyledBlocks>
             </Container>
-            <BigSquareStyled src={bigSquare}/>
+            <BigSquareTest/>
         </StyledAbout>
     );
 };

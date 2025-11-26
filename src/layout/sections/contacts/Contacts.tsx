@@ -40,6 +40,7 @@ const StyledForm = styled.form`
     gap: 16px;
     margin: 0 auto;
     padding: 16px 0;
+    position: relative;
 
 
     textarea {

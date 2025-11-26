@@ -19,18 +19,17 @@ export const StyledProjectWrapper = styled.article`
 
     a {
         text-decoration: underline;
-        margin: 0 20px;
+        margin-right: 20px;
         
         @media ${theme.media.mobile} {
-            margin: 0 10px;
+            margin-right: 20px;
         }
     }
 `
 
 export const StyledImg = styled.img`
     width: 100%;
-    max-height: 265px;
-    height: 100%;
+    height: 265px;
     object-fit: cover;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;

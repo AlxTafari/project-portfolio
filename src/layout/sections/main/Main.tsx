@@ -6,17 +6,27 @@ import {GradientText} from "../../../components/gradientText/GradientText.tsx";
 import abstract from "../../../assets/img/abstract.svg";
 import {theme} from "../../../styles/Theme.ts";
 import {fluidSize, font} from "../../../styles/Common.ts";
+import Typewriter from 'typewriter-effect';
+
 
 export const Main = () => {
     return (
         <StyledMain id="home">
             <Container>
-                <FlexWrapper justify={"space-around"} align={"center"} wrap={"wrap"} >
+                <FlexWrapper justify={"space-between"} align={"center"} >
                     <StyledHello>
                         <span>Hi 👋,</span>
                         <span>My name is</span>
                         <GradientText>Alexander</GradientText>
-                        <span>I am Web Developer</span>
+                        <p>I am Web Developer</p>
+                        <Typewriter
+                            options={{
+                                strings: ['I am Web Developer', 'A Frontend Developer ', 'Безработный'],
+                                delay: "natural",
+                                autoStart: true,
+                                loop: true,
+                            }}/>
+
                     </StyledHello>
 
                     <PhotoWrapper>
@@ -35,16 +45,31 @@ const StyledMain = styled.section`
     align-items: center;
     overflow: hidden;
     
+    ${FlexWrapper} {
+        @media ${theme.media.tablet} {
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+    
 `
 
 const StyledHello = styled.h1`
     ${font({lineHeight: 1.2, weight: 600, Fmax: 50, Fmin: 32})};
+    width: 100%;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     letter-spacing: -1px;
     white-space: wrap;
     
+    span {
+        white-space: nowrap;
+    }
+    p {
+        display: none;
+    }
 `
 
 const PhotoWrapper = styled.div`
@@ -53,9 +78,33 @@ const PhotoWrapper = styled.div`
     border-radius: 50%;
     box-sizing: border-box;
     padding: 8px;
-    background: linear-gradient(to right, #E70FAA, #00C0FD);
     position: relative;
     z-index: 1;
+    
+    @media ${theme.media.tablet} {
+        margin: 0 auto;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        padding: 8px;
+        background: conic-gradient(
+                from 0deg,
+                #E70FAA,
+                #00C0FD,
+                #E70FAA
+        ); /* Конический градиент — делает круговой эффект */
+        animation: spin 4s linear infinite;
+        z-index: -1;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
 
     @media ${theme.media.tablet} {
         display: flex;  
@@ -77,7 +126,7 @@ const PhotoWrapper = styled.div`
         background-size: cover;
         background-position: center;
         
-        @media ${theme.media.mobile} {
+        @media ${theme.media.tablet} {
             display: none;
         }
     }
