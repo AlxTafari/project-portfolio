@@ -27,17 +27,18 @@ export const Subitem = (props: SubitemPropsType) => {
                     <FlexWrapper justify={"space-between"} align={"center"}>
                         <Tag>
                             <Icon iconId={"building"} width={"12px"} height={"12px"} viewBox={"0 0 12 12"}/>
-                            <span>{props.company}</span>
+                            {props.company}
                         </Tag>
+
                         <Tag>
                             <Icon iconId={"location"} width={"12px"} height={"12px"} viewBox={"0 0 12 12"}/>
-                            <span>{props.city}</span>
+                            {props.city}
                         </Tag>
                     </FlexWrapper>
                     <FlexWrapper justify={"flex-end"} align={"center"}>
                         <Tag>
                             <Icon iconId={"date"} width={"16px"} height={"12px"} viewBox={"0 0 16 12"}/>
-                            <time dateTime={props.date}>{props.date}</time>
+                            {props.date}
                         </Tag>
                     </FlexWrapper>
                 </GridWrapper>
@@ -105,25 +106,28 @@ const Tags = styled.div`
         background-size: 200% 200%;
         border-radius: 2px;
         white-space: nowrap;
-        animation: gradientMove 4s linear infinite;
-        
-        @keyframes gradientMove {
-            0% { background-position: 0 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0 50%; }
+        animation: gradientMove 4s 2s linear infinite;
 
+        @keyframes gradientMove {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
+
+        }
     }
+;
 
     svg {
         fill: ${theme.colors.secondaryFont};
     }
 
-    @media ${theme.media.mobile} {
-        span {
-
-        }
-
 `;
 
-const Tag = styled.div`
+const Tag = styled.span`
 `

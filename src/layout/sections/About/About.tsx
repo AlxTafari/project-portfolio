@@ -2,8 +2,7 @@ import styled from "styled-components";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle.tsx";
 import {Subitem} from "../../../components/subitem/Subitem.tsx";
 import {Container} from "../../../components/container/Container.ts";
-// import bigSquare from "../../../assets/img/bigbigSquare.svg"
-import { BigSquareTest} from "../../../components/bigSquare/BigSquareStyled.tsx";
+import bigSquare from "../../../assets/img/bigbigSquare.svg"
 import {font} from "../../../styles/Common.ts";
 import {theme} from "../../../styles/Theme.ts";
 
@@ -60,7 +59,6 @@ export const About = () => {
 
                     </StyledBlocks>
             </Container>
-            <BigSquareTest/>
         </StyledAbout>
     );
 };
@@ -68,7 +66,27 @@ export const About = () => {
 const StyledAbout = styled.section`
     display: flex;
     position: relative;
-    overflow: hidden;
+    overflow: clip;
+    box-sizing: border-box;
+    z-index: 1;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url("${bigSquare}");
+        background-size: cover;
+        background-position: center;
+        width: 800px;
+        height: 800px;
+        pointer-events: none;
+        z-index: -1;
+        top: 0;
+        left: 65%;
+
+        @media ${theme.media.mobile} {
+            display: none;
+        }
+    }
 `
 
 const StyledBlocks = styled.div`

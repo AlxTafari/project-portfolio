@@ -13,7 +13,7 @@ export const Main = () => {
     return (
         <StyledMain id="home">
             <Container>
-                <FlexWrapper justify={"space-between"} align={"center"} >
+                <FlexWrapper justify={"space-around"} align={"center"} >
                     <StyledHello>
                         <span>Hi 👋,</span>
                         <span>My name is</span>
@@ -21,7 +21,7 @@ export const Main = () => {
                         <p>I am Web Developer</p>
                         <Typewriter
                             options={{
-                                strings: ['I am Web Developer', 'A Frontend Developer ', 'Безработный'],
+                                strings: ['I am Web Developer', 'A Frontend Developer '],
                                 delay: "natural",
                                 autoStart: true,
                                 loop: true,
@@ -60,6 +60,7 @@ const StyledHello = styled.h1`
     width: 100%;
     display: flex;
     align-items: flex-start;
+    text-align: left;
     flex-direction: column;
     letter-spacing: -1px;
     white-space: wrap;

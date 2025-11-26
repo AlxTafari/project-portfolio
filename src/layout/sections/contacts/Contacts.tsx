@@ -42,7 +42,6 @@ const StyledForm = styled.form`
     padding: 16px 0;
     position: relative;
 
-
     textarea {
         resize: none;
         max-width: 540px;
@@ -56,6 +55,7 @@ const Field = styled.input`
     border: 1px solid ${theme.colors.borderColor};
     background-color: ${theme.colors.secondaryBg};
     padding: 8px 14px;
+    border-radius: 4px;
 
     font-family: Poppins, sans-serif;
     font-weight: 400;
@@ -80,6 +80,7 @@ const StyledButton = styled.button`
     font-weight: 300;
     font-size: 16px;
     padding: 6px;
+    border-radius: 4px;
     background-color: ${theme.colors.secondaryBg};
     color: ${theme.colors.secondaryFont};
     border: 1px solid ${theme.colors.borderColor};
@@ -92,9 +93,11 @@ const StyledButton = styled.button`
         content: "";
         position: absolute;
         top: 0;
-        left: -4px;
+        left: 0;
         height: 0;
         border: 2px solid transparent;
+        border-top-left-radius: 4px;
+
         transition: height 0.5s ease, border-color 0.5s ease;
         z-index: -1;
     }
@@ -105,6 +108,7 @@ const StyledButton = styled.button`
         &::before {
             height: 100%;
             border-color: ${theme.colors.accent};
+            border-bottom-left-radius: 4px;
         }
     }
 
