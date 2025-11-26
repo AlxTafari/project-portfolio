@@ -9,7 +9,7 @@ export const Menu = (props: { menuItem: Array<{ title: string; link: string }> }
             <ul>
                 {props.menuItem.map((item, index) => {
                         return  <li key={index}>
-                            <StyledLink href={`#${item.link.toLowerCase()}`}>{item.title}</StyledLink>
+                            <StyledLink href={`#${item.link}`}>{item.title}</StyledLink>
                                 </li>
                     }
                 )}
