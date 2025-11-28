@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo.tsx";
-import {Menu} from "../../components/menu/Menu.tsx";
+import {DeskMenu} from "../header/DeskMenu/DeskMenu.tsx";
 import {Container} from "../../components/container/Container.ts";
 import {items} from "../header/Header.tsx";
 import {GradientText} from "../../components/gradientText/GradientText.tsx";
@@ -21,7 +21,7 @@ export const Footer = () => {
 
                 <FooterBox>
 
-                    <Menu menuItem={items}/>
+                    <DeskMenu menuItem={items}/>
 
                     <Copyright>Designed and built by <GradientText>AlxTafari</GradientText></Copyright>
 

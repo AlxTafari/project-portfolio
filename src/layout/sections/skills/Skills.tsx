@@ -5,7 +5,7 @@ import {Container} from "../../../components/container/Container.ts";
 
 export const Skills = () => {
     return (
-        <StyledSkills id="techStack">
+        <StyledSkills id="techstack">
             <Container>
                     <SectionTitle
                         align={"center"}

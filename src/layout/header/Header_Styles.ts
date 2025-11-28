@@ -1,42 +1,47 @@
-import styled, {css} from "styled-components";
-import {StyledLink} from "../styledLink/StyledLink.tsx";
 import {theme} from "../../styles/Theme.ts";
-import {useState} from "react";
+import styled, {css} from "styled-components";
 
+const Header = styled.header`
+    background: rgba(32, 32, 33, 0.5);
+    padding: 20px 0;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
 
-export const MobileMenu = (props: { menuItem: Array<{ title: string; link: string }> }) => {
-    const [menuIsOpen, setMenuIsOpen] = useState(false)
-    const onBurgerBtnClick = () => {
-        setMenuIsOpen(!menuIsOpen)
+    // @media ${theme.media.tabletHeader} {
+    //     .headerSocialIcons {
+    //         display: none;
+    //     }
+    // }
+   
+`
+// Desktop DeskMenu
+
+const DeskMenu = styled.nav`
+    font-size: 20px;
+    min-width: 567px;
+    
+    a {
+        text-decoration: none;
     }
 
-    return (
-        <StyledMobileMenu>
-            <BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>
-                <span></span>
-            </BurgerButton>
-            <MobileMenuPopup isOpen={menuIsOpen} onClick={() => setMenuIsOpen(false)}>
-                <ul>
-                    {props.menuItem.map((item, index) => {
-                            return  <li key={index}>
-                                <StyledLink href={`#${item.link}`}>{item.title}</StyledLink>
-                            </li>
-                        }
-                    )}
-                </ul>
-            </MobileMenuPopup>
-        </StyledMobileMenu>
-    )
-
-};
-
-const StyledMobileMenu = styled.nav`
-    display: none;
-    font-size: 48px;
-
+    ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    
     @media ${theme.media.tabletHeader} {
-        display: block;
+        display: none;
     }
+`
+
+// MobileMenu
+
+const MobileMenu = styled.nav`
+    font-size: 36px;
 `
 const BurgerButton = styled.button<{ isOpen: boolean }>`
     position: fixed;
@@ -120,4 +125,17 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
         text-decoration: none;
     }
 `
+
+
+
+
+export const S = {
+    Header,
+    DeskMenu,
+    MobileMenu,
+    BurgerButton,
+    MobileMenuPopup,
+
+
+ }
 

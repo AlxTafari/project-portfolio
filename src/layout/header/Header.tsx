@@ -1,71 +1,71 @@
-import styled from "styled-components";
+import * as React from "react";
 import {Logo} from "../../components/logo/Logo.tsx";
-import {Menu} from "../../components/menu/Menu.tsx";
+import {DeskMenu} from "./DeskMenu/DeskMenu.tsx";
 import {SocialIcons} from "../../components/socialBar/SocialIcons.tsx";
 import {Container} from "../../components/container/Container.ts";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
-import {MobileMenu} from "../../components/mobileMenu/MobileMenu.tsx";
-import {theme} from "../../styles/Theme.ts";
+import {MobileMenu} from "./mobileMenu/MobileMenu.tsx";
+import {S} from "./Header_Styles.ts";
 
-export const items= [
+export const items = [
     {
-        title:"Home",
-        link:"home",
+        title: "Home",
+        link: "home",
     },
     {
-        title:"About",
-        link:"about",
+        title: "About",
+        link: "about",
     },
     {
-        title:"Tech Stack",
-        link:"techStack",
+        title: "Tech Stack",
+        link: "techstack",
     },
     {
-        title:"Projects",
-        link:"projects",
+        title: "Projects",
+        link: "projects",
     },
     {
-        title:"Contact",
-        link:"contact",
+        title: "Contact",
+        link: "contact",
     },
-    ]
+]
 
-export const Header = () => {
+export const Header: React.FC = () => {
+    const [width, setWidth] = React.useState<number>(window.innerWidth);
+    const breakpoint = 860;
+
+    React.useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth);
+        window.addEventListener("resize", handleWindowResize);
+        return () => window.removeEventListener("resize", handleWindowResize);
+    }, []);
+
+
     return (
-        <StyledHeader>
+        <S.Header>
             <Container>
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo className={"headerLogo"}/>
                     <FlexWrapper justify="space-between" align={"center"} gap={"30px"}>
-                        <MobileMenu menuItem={items} />
-                        <Menu menuItem={items}/>
-                        <SocialIcons className={"headerSocialIcons"}/>
+
+                        {width < breakpoint ? <MobileMenu menuItem={items}/>
+                            : (
+                                <>
+                                    <DeskMenu menuItem={items}/>
+                                    <SocialIcons className={"headerSocialIcons"}/>
+                                </>
+                            )}
+
+
                     </FlexWrapper>
 
                 </FlexWrapper>
             </Container>
 
-        </StyledHeader>
+        </S.Header>
 
     );
 };
 
-const StyledHeader = styled.header`
-    background: rgba(32, 32, 33, 0.5);
-    padding: 20px 0;
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99999;
-
-    @media ${theme.media.tabletHeader} {
-        .headerSocialIcons {
-            display: none;
-        }
-    }
-   
-`
 
 
