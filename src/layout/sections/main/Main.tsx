@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import photo from "../../../assets/img/prj6.webp"
+import photo from "../../../../public/BBE98017-AB38-4DC4-A8B9-1D55FD5ADD2E.jpg"
 import {Container} from "../../../components/container/Container.ts";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {GradientText} from "../../../components/gradientText/GradientText.tsx";

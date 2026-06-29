@@ -16,6 +16,7 @@ export const StyledProjectWrapper = styled.article`
     font-family: 'Poppins', sans-serif;
     line-height: 26px;
     font-size: 16px;
+    cursor: pointer;
 
     a {
         text-decoration: underline;

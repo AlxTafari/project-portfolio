@@ -14,11 +14,12 @@ type ProjectCardPropsType = {
     title: string;
     description: string;
     techStack: string[];
+    onClick: () => void;
 }
 
 const ProjectCard = (props: ProjectCardPropsType) => {
     return (
-        <StyledProjectWrapper>
+        <StyledProjectWrapper onClick={props.onClick}>
             <StyledImg src={props.image} alt={props.title}/>
 
             <ProjectInformation>
@@ -26,12 +27,13 @@ const ProjectCard = (props: ProjectCardPropsType) => {
                 <StyledProjectDescription>{props.description}</StyledProjectDescription>
                 <ListGenerator itemArr={props.techStack}/>
                 <StyledLinkBox>
-                    <StyledLink href={"#"}>
+                    {/* stopPropagation — чтобы клик по ссылкам не открывал модалку */}
+                    <StyledLink href={"#"} onClick={(e) => e.stopPropagation()}>
                         <Icon iconId={"chain"} width={"20"} height={"20"} viewBox={"0 0 20 20"}/>
                         Live Preview
                     </StyledLink>
 
-                    <StyledLink href={"#"}>
+                    <StyledLink href={"#"} onClick={(e) => e.stopPropagation()}>
                         <Icon iconId={"git"} width={"20"} height={"20"} viewBox={"0 0 30 30"}/>
                         View Code
                     </StyledLink>

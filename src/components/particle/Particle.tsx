@@ -64,7 +64,7 @@ export const Particle = () => {
             // },
             particles: {
                 number: {
-                    value: 52,
+                    value: 50,
                     density: {
                         enable: true,
                         value_area: 631.3280775270874

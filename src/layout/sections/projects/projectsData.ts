@@ -5,6 +5,12 @@ import proj4 from "../../../assets/img/prj4.webp";
 import proj5 from "../../../assets/img/prj5.webp";
 import proj6 from "../../../assets/img/prj6.webp";
 
+export type ProjectData = {
+    name: string;
+    description: string;
+    image: string;
+    techStack: string[];
+};
 
 export const projectsData = {
     project1: {
